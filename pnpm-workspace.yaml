@@ -1,2 +1,5 @@
 ignoredBuiltDependencies:
   - rome
+
+onlyBuiltDependencies:
+  - esbuild
