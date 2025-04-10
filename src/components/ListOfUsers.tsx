@@ -1,6 +1,4 @@
-import {
-  Badge, Card, Table, TableBody, TableCell, TableHead, TableHeaderCell, TableRow, Title
-} from '@tremor/react'
+import { Badge, Card, Table, TableBody, TableCell, TableHead, TableHeaderCell, TableRow, Title } from '@tremor/react'
 import { useAppSelector } from '../hooks/store'
 import { useUserActions } from '../hooks/useUserActions'
 
@@ -31,10 +29,10 @@ export function ListOfUsers () {
               <TableCell style={{ display: 'flex', alignItems: 'center' }}>
                 <img
                   style={{
-					width: '32px',
-					height: '32px',
-					borderRadius: '50%',
-				    marginRight: '8px'
+									  width: '32px',
+									  height: '32px',
+									  borderRadius: '50%',
+									  marginRight: '8px'
                   }}
                   src={`https://unavatar.io/github/${item.github}`}
                   alt={item.name}
