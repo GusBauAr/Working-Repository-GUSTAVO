@@ -6,16 +6,20 @@ const TURNS={
   }
   
   
-
+  //renderizado condicional de turno
   const Square = ({children, isSelected, updateBoard, index}) => {
     
     const className = `square ${isSelected ? 'is-selected' : ''}`
     // const className = `square ${isSelected ? 'is-selected' : ''}`
-  
-    return (
-      <div className={className}>
-        {children}
+    
 
+    const handleClick = () => {
+      updateBoard()
+    }
+
+    return (
+      <div onClick={handleClick} className={className}>
+        {children}
       </div>
     )
   }
@@ -27,7 +31,10 @@ const TURNS={
     )
     const [turn, setTurn] = useState(TURNS.X)
 
-    
+    const updateBoard = () => { 
+      const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
+      setTurn(newTurn)
+    }   
 
 
 
@@ -42,6 +49,7 @@ const TURNS={
                 <Square 
                   key={index}
                   index={index}
+                  updateBoard={updateBoard}
                 >
                   {board[index]}
 
