@@ -1,4 +1,5 @@
 import { useState } from "react"
+import confetti from "canvas-confetti"
 
 const TURNS={
   X:'x',
@@ -90,6 +91,7 @@ const TURNS={
       const newWinner = chwckWinner(newBoard)
       //la actualizacion de los estados en react son asincronos 
       if (newWinner) {
+        confetti()
         setWinner(newWinner) 
         //actualizacion del estado acincrono
       } else if (checkEndGame(newBoard)) {
