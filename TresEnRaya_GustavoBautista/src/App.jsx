@@ -64,8 +64,17 @@ const TURNS={
     return null
   }
 
+  const resetGame = () => {
+    setBoard(Array(9).fill(null))
+    setTurn(TURNS.X)
+    setWinner(null)
+   }
 
-
+   const checkEndGame = (newBoard) => {
+    //revisar si el tablero esta lleno
+    //si el tablero esta lleno y no hay ganador se retorna true
+    return newBoard.every((square) => square !== null)
+   }
 
     const updateBoard = (index) => {
       //si el index ya tiene un valor no se puede volver a cambiar
@@ -81,19 +90,25 @@ const TURNS={
       const newWinner = chwckWinner(newBoard)
       //la actualizacion de los estados en react son asincronos 
       if (newWinner) {
-        alert(`El ganador es ${newWinner}`)
-        setWinner(newWinner) //actualizacion del estado acincrono
+        setWinner(newWinner) 
+        //actualizacion del estado acincrono
+      } else if (checkEndGame(newBoard)) {
+        setWinner(false)
       }
+      //si el tablero esta lleno y no hay ganador se empata
     }   
+
+    
 
 
 
     return (
       <main className="board">
         <h1> tres raya</h1>
+        <button onClick={resetGame}>Reset del juego</button>
         <section className="game">
           {
-            board.map((_, index) => {
+            board.map((square, index) => {
               //componentes, renderizado  elementos, cada uno de los Squares dentro del tablero
               return(
                 //componente Square
@@ -106,22 +121,45 @@ const TURNS={
                   index={index}
                   updateBoard={updateBoard}
                 >
-                  {board[index]}
+                  {square}
 
                 </Square>                
                 )
               })
             }
+
+
         </section>
         <section className="turn">
-        <Square isSelected={turn === TURNS.X}>
-        {TURNS.X}
-        </Square>
+          <Square isSelected={turn === TURNS.X}>
+          {TURNS.X}
+          </Square>
 
-        <Square isSelected={turn === TURNS.O}>
-        {TURNS.O}
-        </Square>
+          <Square isSelected={turn === TURNS.O}>
+          {TURNS.O}
+          </Square>
         </section>
+        {
+          winner !== null && (
+            <section className="winner">
+              <div className="text">
+                <h2>
+                  {
+                    winner === false ? 'Empate' : 'Ganó:'
+                  }
+                </h2>
+                <header className="win">
+                  {winner && <Square>{winner}</Square>}
+                </header>
+
+                <footer>
+                  <button onClick={resetGame}>empezar de nuevo</button>
+                </footer>
+              </div>
+            </section>
+          )
+        }
+
       </main>
     )
   }           
