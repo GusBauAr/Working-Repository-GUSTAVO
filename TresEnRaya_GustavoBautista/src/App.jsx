@@ -26,22 +26,64 @@ const TURNS={
   }
 
 
+  const WINNER_COMBOS = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ]
+
+
   function App() {
     const [board, setBoard] = useState(
       Array(9).fill(null)
     )
     const [turn, setTurn] = useState(TURNS.X)
+    //null esque no hay ganador, false es que hay un empate
+    const [winner, setWinner] = useState(null)
+    
+    const chwckWinner = (boardToCheck) => {
+      //se revisa  todas las combinaciones ganadoras
+      //para ver si x o o es el ganador
+      //si hay un ganador se retorna el ganador
+       for (const combo of WINNER_COMBOS) {
+        const [a, b, c] = combo
+        if (
+          boardToCheck[a] &&
+          boardToCheck[a] === boardToCheck[b] &&
+          boardToCheck[a] === boardToCheck[c]
+        ) {
+          //si no hay un ganador se retorna null
+          return boardToCheck[a]
+        } 
+    }
+    return null
+  }
+
+
+
 
     const updateBoard = (index) => {
       //si el index ya tiene un valor no se puede volver a cambiar
-      if(board[index]) return
-      //con estas tres lineas hace que se actualice 
+      if(board[index] || winner) return
+      //con estas tres lineas hace que se actualice el tabero
       const newBoard = [...board]
       newBoard[index] = turn
-      setBoard(newBoard) 
-
+      setBoard(newBoard) //asincrono
+      //con estas lineas hace que se cambie el turno
       const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
       setTurn(newTurn)
+      //vamos arevisar si hay un ganador
+      const newWinner = chwckWinner(newBoard)
+      //la actualizacion de los estados en react son asincronos 
+      if (newWinner) {
+        alert(`El ganador es ${newWinner}`)
+        setWinner(newWinner) //actualizacion del estado acincrono
+      }
     }   
 
 
