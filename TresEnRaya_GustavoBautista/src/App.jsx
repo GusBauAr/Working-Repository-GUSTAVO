@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import confetti from 'canvas-confetti'
-
 import { Square } from './components/Square.jsx'
 import { TURNS } from './constants.js'
 import { checkWinnerFrom, checkEndGame } from './logic/board.js'
@@ -58,7 +57,7 @@ function App () {
 
   return (
     <main className='board'>
-      <h1 translate="no">Tic tac toe</h1>
+      <h1 translate="no">TRES EN RAYA</h1>
       <button onClick={resetGame}>Reset del juego</button>
       <section className='game'>
         {
