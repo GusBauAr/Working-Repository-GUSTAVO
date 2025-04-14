@@ -33,6 +33,8 @@ const TURNS={
     const [turn, setTurn] = useState(TURNS.X)
 
     const updateBoard = (index) => {
+      //si el index ya tiene un valor no se puede volver a cambiar
+      if(board[index]) return
       //con estas tres lineas hace que se actualice 
       const newBoard = [...board]
       newBoard[index] = turn
