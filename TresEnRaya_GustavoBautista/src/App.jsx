@@ -12,11 +12,12 @@ const TURNS={
     const className = `square ${isSelected ? 'is-selected' : ''}`
     // const className = `square ${isSelected ? 'is-selected' : ''}`
     
-
+     
     const handleClick = () => {
-      updateBoard()
+      updateBoard(index)
     }
 
+    //cuanse haga click en el div va a ejecutar la funcion handleClick
     return (
       <div onClick={handleClick} className={className}>
         {children}
@@ -31,7 +32,12 @@ const TURNS={
     )
     const [turn, setTurn] = useState(TURNS.X)
 
-    const updateBoard = () => { 
+    const updateBoard = (index) => {
+      //con estas tres lineas hace que se actualice 
+      const newBoard = [...board]
+      newBoard[index] = turn
+      setBoard(newBoard) 
+
       const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
       setTurn(newTurn)
     }   
@@ -44,8 +50,13 @@ const TURNS={
         <section className="game">
           {
             board.map((_, index) => {
-              //componentes, renderizado de elementos
+              //componentes, renderizado  elementos, cada uno de los Squares dentro del tablero
               return(
+                //componente Square
+                //el componente Square se le pasa la propiedad key para identificarlo
+                //el componente Square se le pasa la propiedad index para identificarlo
+                //el componente Square se le pasa la propiedad updateBoard para actualizar el tablero
+                //el componente Square se le pasa la propiedad children para mostrar el contenido
                 <Square 
                   key={index}
                   index={index}
