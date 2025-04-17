@@ -1,4 +1,8 @@
 
+
+// console.log(miNombre + 'Gustavo');
+
+
 // alert('Hola Mundo desde app.js');
 
 
@@ -23,5 +27,15 @@ c= 'hola de nuevo';
 
 // console.table ({a, b, c, d, x});
 
+
 //dentro del objeto global window
-var miNombre = 'gustavo';
+//permite remplazar propiedades y objetos propios del objeto glbal winow
+// var outerWidth = 1000000;
+// var outerHeight = 600;
+
+
+//let y const no sobre escriben las variables que se encuntran en el objeto global window, o donde sea que este corriendo el javascript 
+// let outerWidth = 1000000;
+// const outerHeight = 600;
+
+let miNombre = 'GUSTAVO BAUTISTA';
