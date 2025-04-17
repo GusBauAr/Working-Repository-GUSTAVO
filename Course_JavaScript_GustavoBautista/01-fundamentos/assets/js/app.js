@@ -1,4 +1,9 @@
 
+// alert('Hola Mundo desde app.js');
+
+
+// console.log('Hola Mundo');
+
 //depuracion y breckpoints
 //lo vimos en inspeccionar Un breakpoint es un punto específico en el código donde le indicas al depurador (debugger) que detenga la ejecución del programa.
 let a = 10,
@@ -9,22 +14,14 @@ let a = 10,
 
 const saludo = c + d;
 
-// let a = 10;
-// let b = 10;
-// let c = 'hola';
-// let d = 'spiderman';
-// let x = a + b;
+//  console.log('%c mis variables', 'color:blue; font-weight:bold;');
+//  console.log({a});
+//  console.log({b});
+//  console.log({c});
 
 c= 'hola de nuevo';
 
+// console.table ({a, b, c, d, x});
 
-// console.log(x);
-// console.log({a});
-// console.log({b});
-// console.log({c});
-// console.log({d});
-
-
-//console.table ({a, b, c, d})
-
-
+//dentro del objeto global window
+var miNombre = 'gustavo';
