@@ -30,5 +30,35 @@ console.log('Vivo',personaje[x]); //false
 console.log('Ultima pelicula',personaje['ultima-pelicula']); //Infinity War
 //los objetos literales pueden tener propiedades y metodos
 
+//--------------------------------------------------------------------------------
+//MAS DETALLES
+//--------------------------------------------------------------------------------
+// quiero borrar la palabra o mejor dicho la propiedad edad de este objeto
+delete personaje.edad; //borramos la propiedad edad
+//personaje.edad = null; //cambiamos la edad a null
+console.log(personaje)
+//hora decesitamos crear una nueva propiedad en el objeto
+personaje.casado = true; //agregamos una nueva propiedad al objeto  
+
+//quiero trabajar nuestro objeto como si fuera un array 
+//
+const entriesPares = Object.entries(personaje); //convertimos el objeto en un array
+console.log(entriesPares); // [Array(2), Array(2), Array(2), Array(2), Array(2), Array(2), Array(2)]
+
+console.log(personaje);
+
+//para hacer un bloqueo
+Object.freeze(personaje); //bloqueamos el objeto para que no se pueda modificar
+personaje.dinero = 1000000; //no se puede agregar una nueva propiedad
+personaje.casado = false; //no se puede modificar la propiedad
+personaje.direccion.ubicacion ='Costa Rica'; //no se puede modificar la propiedad
+console.log(personaje);
+
+
+const propiedades = Object.getOwnPropertyNames(personaje); //obtenemos las propiedades del objeto
+const valores = Object.values(personaje); //obtenemos los valores del objeto
+console.log({propiedades, valores}); //['nombre', 'codeName', 'vivo', 'edad', 'coords', 'trajes', 'direccion', 'ultima-pelicula']
+
+//------------------------------------------------------------------------------------
 
 
