@@ -1,10 +1,17 @@
 let juegos =['zelda', 'mario', 'metroid', 'donkey kong'];
 console.log('largo:',juegos.length); //en el length se puede ver el largo del arreglo y todos los que estan en cubo son metodos
                                     //Lo que nos dice length es cuentos elementos hay dentro del arreglo 1,2,3,4.
+                                    
 let primero=juegos[0]; // obtener el primer elemento , siempre es el 0
 // let primero=juegos[2-2]; se puede hacer formas matematicas para obtener el primer elemento e igual va dar 0
 let ultimo = juegos[juegos.length-1]; //obtener el ultimo elemento, se resta 1 porque el length empieza en 1 y el arreglo en 0
 console.log ({primero, ultimo});
+
+
+
+
+
+
 
 // ahora si necesitamos  barrer cada uno de los elementos del arreglo para ejecutar algun tipo de procedimiento
 //existe un metodo muy interezante que se llama forEach, este metodo nos permite barrer cada uno de los elementos del arreglo

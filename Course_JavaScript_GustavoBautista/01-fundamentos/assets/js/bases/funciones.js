@@ -1,9 +1,10 @@
 
 
-// function saludar(){
-//     console.log('Hola Gustavo');
-// }
-// saludar(); //llama a la funcion
+function saludar(){
+
+     console.log('Hola Gustavow');
+}
+saludar(); //llama a la funcion
 
 //este es una funcion de saludo
 function saludar( nombre ) { //asi se defide una funcion
@@ -70,3 +71,43 @@ console.log(sumar2( 2, 2 )); //esto va a imprimir 3, esta con dos argumentos la 
 console.log(sumar3( 3, 3 )); //esto va a imprimir 3, esta con dos argumentos la funcion de flecha rersumida
 console.log(getAleatorio()); //esto va a imprimir un numero aleatorio
 console.log(getAleatorio2()); //esto va a imprimir un numero aleatorio en flecha
+//..........................................................
+
+//SUMA
+
+function sumar (num1, num2){
+    let respuesta; //variable
+
+    respuesta = num1 + num2; 
+
+    return respuesta; //retornas la variable
+}
+let suma = sumar (5,5);
+console.log("la suma es:", suma);
+
+
+
+function buenasTardes (nombre, apellido){
+    return 'buenas tardes ' + nombre + apellido;
+}
+console.log(buenasTardes('Noelia'+ 'bautista'));
+
+//..........................................
+function sumar4 (num1, num2){
+    return 'la suma es:' + (num1 + num2);
+}
+console.log(sumar4(1,5));
+//........................................
+
+const sumar5 = (num1, num2) => 'la suma es:' + (num1 + num2);
+console.log(sumar5(1,5))
+
+
+
+
+
+
+
+
+
+
