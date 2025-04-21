@@ -25,6 +25,13 @@ console.log({juan, ana}); // {nombre: 'Ana'} {nombre: 'Ana'}
 // [[Prototype]]: Object
 
 
+const modifNumber =(myNumber) => {
+    myNumber = myNumber + 5;
+}
+let num1 = 10;
+modifNumber (num1);
+console.log (num1);
+
 // .................................................................................................................
 
 const cambiaNombre = (persona) => { //este es una funcion que recibe un objeto y lo modifica
