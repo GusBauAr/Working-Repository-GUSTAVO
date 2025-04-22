@@ -19,11 +19,11 @@ const miModulo =  (() => { //funciones anonimas
           puntosHTML = document.querySelectorAll('small');
 
     //esta funcion inicializa el juego
-    const inicializarJuego = (numjugadores = 2) => {
+    const inicializarJuego = (numJugadores = 2) => {
         deck = crearDeck();
 
         puntosJugadores = [];
-        for (let i = 0; i < numjugadores; i++){
+        for (let i = 0; i < numJugadores; i++){
             puntosJugadores.push(0);
         }
         puntosHTML.forEach(elem => elem.innerText = 0);
@@ -112,7 +112,7 @@ const miModulo =  (() => { //funciones anonimas
             }else{
                 alert ('COMPUTADORA GANA')
             }
-            }, 100);
+        }, 100);
     }
 //.................................................................................................
     //TURNO DE LA COMPUTADORA
@@ -152,7 +152,7 @@ const miModulo =  (() => { //funciones anonimas
     btnDetener.addEventListener('click', () =>{
         btnPedir.disabled = true;
         btnDetener.disabled = true;
-        turnoComputadora(puntosJugadores);
+        turnoComputadora(puntosJugadores [0]);
     });
 
     // btnNuevo.addEventListener('click', () => {
