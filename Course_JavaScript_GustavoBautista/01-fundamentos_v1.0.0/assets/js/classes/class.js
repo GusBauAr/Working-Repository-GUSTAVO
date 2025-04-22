@@ -1,0 +1,22 @@
+
+
+//el objetivo de clases es que podamos tener propiedades y metodos que sean comunes en todas las instancias de esta misma persona
+class Persona {
+
+    // se esta inicializando propiedades de clases
+    nombre = '';
+    codigo = '';
+    frase = '';
+
+    constructor (nombre = 'sin nombre', codigo = 'sin codigo', frase = 'sin frase'){//el constructor es un metodo que se va ejecutar exactamente en el momento que se crea una nueva instancia de Persona
+                    //el contructor es el unico metodo que retorna una instancia de un objeto y no retorna underfined
+        this.nombre = nombre;        
+        this.codigo = codigo;
+        this.frase = frase;
+    }
+}
+//crear una nueva instancia de esta clase
+const spiderman = new Persona('Peter Parker', 'Spider', 'amigo spiderman');
+const ironman = new Persona('Tony Stark', 'ironman', 'yo soy ironman');
+console.log(spiderman);
+console.log(ironman);
