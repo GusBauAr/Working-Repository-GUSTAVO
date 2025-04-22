@@ -14,8 +14,10 @@ let puntosJugador = 0,
 
 //referencias del html
 const btnPedir = document.querySelector('#btnPedir');
-const divCartasJugador = document.querySelector('#jugador-cartas');
+const btnDetener = document.querySelector('#btnDetener');
 
+const divCartasJugador = document.querySelector('#jugador-cartas');
+const divCartasComputadora = document.querySelector('#computadora-cartas');
 const puntosHTML = document.querySelectorAll('small');
 
 
@@ -72,18 +74,42 @@ const pedirCarta = () =>{
 
 //MAS RESUMIDA
 
-    const valorCarta = (carta) => {
-        const valor = carta.substring(0, carta.length-1); //se toma el primer valor de la carta
-        return(isNaN(valor)) ?
+const valorCarta = (carta) => {
+    const valor = carta.substring(0, carta.length-1); //se toma el primer valor de la carta
+    return(isNaN(valor)) ?
         (valor === 'A') ? 11 : 10 //primera condicion ternaria
         : valor * 1;
-    }
+}
+
+//TURNO DE LA COMPUTADORA
+const turnoComputadora = (puntosMinimos) => {
+
+    do{
+        const carta = pedirCarta();
+        puntosComputadora = puntosComputadora + valorCarta(carta); //suma los puntos
+        puntosHTML[1].innerText = puntosComputadora;
+    
+        //<img class="carta" src="assets/cartas/2D.png">
+        const imgCarta = document.createElement('img');
+        imgCarta.src = `assets/cartas/${ carta }.png`;
+        imgCarta.classList.add('carta');
+        divCartasComputadora.append(imgCarta);
+
+        if (puntosMinimos > 21){
+            break;
+        }
+
+
+    }while( (puntosComputadora < puntosMinimos) && (puntosMinimos <=  21));
+}
+
+    
 
 //EVENTOS...
 
 btnPedir.addEventListener('click',() => { //funcion tradicional o de flecha
     const carta = pedirCarta();
-    puntosJugador = puntosJugador + valorCarta(carta);
+    puntosJugador = puntosJugador + valorCarta(carta); //suma los puntos
     puntosHTML[0].innerText = puntosJugador;
 
     //<img class="carta" src="assets/cartas/2D.png">
@@ -96,14 +122,21 @@ btnPedir.addEventListener('click',() => { //funcion tradicional o de flecha
 
     if(puntosJugador > 21){
         console.warn('PERDISTE');
-        btnPedir.disabled = true; 
+        btnPedir.disabled = true;
+        btnDetener.disabled = true;
+        turnoComputadora(puntosJugador); 
     }else if (puntosJugador === 21){
         console.warn('GANASTE');
-        btnPedir.disabled = true;    
+        btnPedir.disabled = true;
+        btnDetener.disabled = true;    
+        turnoComputadora(puntosJugador);
     }
 
+});
 
+btnDetener.addEventListener('click', () =>{
+    btnPedir.disabled = true;
+    btnDetener.disabled = true;
+    turnoComputadora(puntosJugador);
+    });
 
-
-
-}); 
