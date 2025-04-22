@@ -1,4 +1,4 @@
-const miModulo =  (() => { //funciones anonimas
+const miModulo =  (() => { //funciones anonimas, el codigo esta encapsulado
     'use strict'
 
         //arreglo
