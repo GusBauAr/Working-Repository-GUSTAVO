@@ -9,6 +9,17 @@ let deck = [];
 const tipos =['C', 'D', 'H', 'S'];
 const especiales =['A', 'J', 'Q', 'K'];
 
+let puntosJugador = 0,
+    puntosComputadora =0;
+
+//referencias del html
+const btnPedir = document.querySelector('#btnPedir');
+console.log(btnPedir);
+
+const puntosHTML = document.querySelectorAll('small');
+
+
+
 //esta funcion crea un anueva baraja de cartas 
 const crearDeck = ( ) => {
     for (let i = 2; i <= 10; i++){
@@ -38,8 +49,6 @@ const pedirCarta = () =>{
     
     const carta = deck.pop();// selecciona la ultima posicion del array
 
-    console.log(deck);
-    console.log (carta);
     return carta;
 }
 //pedirCarta();
@@ -70,5 +79,10 @@ const pedirCarta = () =>{
         : valor * 1;
     }
 
-const  valor = valorCarta(pedirCarta ());
-console.log({valor});
+//EVENTOS...
+
+btnPedir.addEventListener('click',() => { //funcion tradicional o de flecha
+    const carta = pedirCarta();
+    puntosJugador = puntosJugador + valorCarta(carta);
+    puntosHTML[0].innerText = puntosJugador;
+}); 
