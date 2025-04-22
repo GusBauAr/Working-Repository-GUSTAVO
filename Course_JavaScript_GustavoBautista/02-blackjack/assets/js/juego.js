@@ -42,4 +42,33 @@ const pedirCarta = () =>{
     console.log (carta);
     return carta;
 }
-pedirCarta();
+//pedirCarta();
+//.................................................................
+//OPCION 1
+
+// const valorCarta = (carta) => {
+//     //extraer la primera letra
+//     const valor = carta.substring(0, carta.length-1); //se toma el primer valor de la carta
+//     let puntos = 0;
+//     //2=2 10=10 3=3
+//      if(isNaN(valor )){//evaluega lo qeu esta entre parentecis si es un numero o no 
+//         puntos = (valor === 'A') ?  11 : 10;
+//      } else{
+//         puntos = valor * 1;
+//     }
+//     console.log(puntos);
+// }
+//valorCarta('9D');
+//...................................................................
+
+//MAS RESUMIDA
+
+    const valorCarta = (carta) => {
+        const valor = carta.substring(0, carta.length-1); //se toma el primer valor de la carta
+        return(isNaN(valor)) ?
+        (valor === 'A') ? 11 : 10 //primera condicion ternaria
+        : valor * 1;
+    }
+
+const  valor = valorCarta(pedirCarta ());
+console.log({valor});
