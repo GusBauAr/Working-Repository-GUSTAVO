@@ -14,9 +14,34 @@ class Persona {
         this.codigo = codigo;
         this.frase = frase;
     }
+    //..................................................................................................
+    //el metodo siempre se acostumbra que este despues del contructor
+    //creamos un metodo si esta vacio el () quiere decir que no tiene argumentos y saldra undefined
+    quienSoy(){
+        console.log(`Soy ${this.nombre} y mi identidad es ${this.codigo}`);
+
+    } //.....................................................................................................
+    
+    //este es otro metodo
+    miFrase(){
+        //podemosllamar los metodos dentor de una clase, o sea dentro de otros metodos en este caso metodo (quienSoy)
+        this.quienSoy();
+        console.log(`${this.codigo} dice: ${this.frase}`);
+    }
+    //................................................................
+
+    
 }
+
 //crear una nueva instancia de esta clase
-const spiderman = new Persona('Peter Parker', 'Spider', 'amigo spiderman');
+const spiderman = new Persona('Peter Parker', 'Spider', 'soy tu amigo spiderman');
 const ironman = new Persona('Tony Stark', 'ironman', 'yo soy ironman');
 console.log(spiderman);
 console.log(ironman);
+//............................................
+//este es parte del metodo
+spiderman.quienSoy();
+ironman.quienSoy();
+//..........................................
+spiderman.miFrase();
+ironman.miFrase();
