@@ -14,7 +14,7 @@ let puntosJugador = 0,
 
 //referencias del html
 const btnPedir = document.querySelector('#btnPedir');
-console.log(btnPedir);
+const divCartasJugador = document.querySelector('#jugador-cartas');
 
 const puntosHTML = document.querySelectorAll('small');
 
@@ -85,4 +85,25 @@ btnPedir.addEventListener('click',() => { //funcion tradicional o de flecha
     const carta = pedirCarta();
     puntosJugador = puntosJugador + valorCarta(carta);
     puntosHTML[0].innerText = puntosJugador;
+
+    //<img class="carta" src="assets/cartas/2D.png">
+    const imgCarta = document.createElement('img');
+    imgCarta.src = `assets/cartas/${ carta }.png`;
+    imgCarta.classList.add('carta');
+    divCartasJugador.append(imgCarta);
+    
+
+
+    if(puntosJugador > 21){
+        console.warn('PERDISTE');
+        btnPedir.disabled = true; 
+    }else if (puntosJugador === 21){
+        console.warn('GANASTE');
+        btnPedir.disabled = true;    
+    }
+
+
+
+
+
 }); 
