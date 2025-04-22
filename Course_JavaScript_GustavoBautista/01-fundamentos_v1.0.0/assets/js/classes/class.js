@@ -3,6 +3,18 @@
 //el objetivo de clases es que podamos tener propiedades y metodos que sean comunes en todas las instancias de esta misma persona
 class Persona {
 
+    //ejercicio:Cuantas instancias de mi clase se han inicializado (static _conteo = 0)
+    static _conteo = 0;
+    static get conteo(){
+        return Persona._conteo + 'instancias';
+    }
+
+    static mensaje(){
+        console.log(this.nombre); //undefined
+        console.log('hola a todos  soy un metodo estatico');
+    }
+
+
     //  se esta inicializando propiedades de clases
     nombre = '';
     codigo = '';
@@ -15,6 +27,8 @@ class Persona {
         this.nombre = nombre;        
         this.codigo = codigo;
         this.frase = frase;
+
+        Persona._conteo++;
     }
     // controlar una propiedad, ejm: comida siempre tiende que estar en mayuscula
     //EL SET ES PARA ESTABLECER UN VALOR
@@ -53,12 +67,25 @@ const ironman = new Persona('Tony Stark', 'ironman', 'yo soy ironman');
 //console.log(ironman);
 //............................................
 //este es parte del metodo
-spiderman.quienSoy();
+//spiderman.quienSoy();
 //ironman.quienSoy();
 //..........................................
 spiderman.miFrase();
 //ironman.miFrase();
 //................................... SET
 spiderman.setComidaFavorita = 'El pie  de cereza de la tia May';
-console.log(spiderman.getComidaFavorita);
-console.log(spiderman)
+//console.log(spiderman.getComidaFavorita);
+//console.log(spiderman)
+
+console.log('conteo statico', Persona._conteo);// nos va mostrar cuantas instancias tenemos
+console.log(Persona.conteo); //nos va mostrar 2 instancias
+Persona.mensaje(); //nos muestra undefined , hola a todos soy un metodo estatico
+
+
+
+
+
+
+
+
+
