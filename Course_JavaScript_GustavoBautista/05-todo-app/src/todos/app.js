@@ -8,6 +8,8 @@ import html from './app.html?raw';
 export const App = (elementId) => { //funcion en flecha
 
 
+    
+
     //cuando la funcion App() se llama
     (() => {
         const app = document.createElement('div');
