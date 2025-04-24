@@ -9,16 +9,27 @@ import { heroes } from "../data/heroes";
 
 export const callbacksComponent = (element) => {
 
-
-    const id = '5d86371f2343e37870b91ef1';
-    findHero(id, (error, hero) => { // se va mandar el id como argumento
+ //el callback hell es como dentro de un callback llama a otro callback y ese callback llama a otro callback
+    const id1 = '5d86371f2343e37870b91ef1';
+    const id2 = '5d86371fd55e2e2a30fe1ccb2';
+    findHero(id1, (error, hero1) => { // se va mandar el id como argumento
         // element.innerHTML = hero?.name || 'No hay heroe';
 
         if (error){
             element.innerHTML = error;
             return;
         }
-        element.innerHTML = hero.name;
+
+        findHero (id2, (error, hero2) => {
+            if (error){
+                element.innerHTML = error;
+                return;
+            }
+            element.innerHTML = `${hero1.name} / ${hero2.name}`;
+        })
+
+
+        
     }); 
     //el valor de esa variable es esta funcion en cual cae en el callback de abajo
 
