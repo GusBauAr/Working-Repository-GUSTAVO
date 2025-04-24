@@ -22,13 +22,25 @@ const state = {
     filter: Filters.All,
 }
 
+
 const initStore = () => { // la indea de este initStore va inicializar si tengo informacion en el STORE, el initStore se va llamar en el main
-    console.log(state); 
+    loadStore();
     console.log('InitStore 😸');
 }
 
-const loadStore = () => {
-    throw new Error('Not implemented'); 
+
+const loadStore = () => { //esto hace que lea el localstorage, para cargar aqui el storage.
+    //primero hay que verificar si existe ese (s'state') --->, JSON.string........
+
+    if (!localStorage.getItem('state')) return;
+    const  {todos = [], filter = Filters.All} = JSON.parse(localStorage.getItem('state'));
+    state.todos = todos;
+}
+
+
+const saveStateToLocalStorage = () => { //podemos llamar a todos los lugares  donde comificamos mi state , como  en addTodo, 
+    localStorage.setItem('state',JSON.stringify(state));
+
 }
 
 const getTodos = (filter = Filters.All ) => { //tenemos 3 tipos de filtros, all, completed y pending
@@ -42,9 +54,10 @@ const getTodos = (filter = Filters.All ) => { //tenemos 3 tipos de filtros, all,
         default:
             throw new  Error(`Option ${filter} is not  valid`);
         
-
     }
 }
+
+
 
 /**
  * 
@@ -52,9 +65,12 @@ const getTodos = (filter = Filters.All ) => { //tenemos 3 tipos de filtros, all,
  */
 const addTodo = ( descripcion) => { //AGREGAR
     if  (!descripcion) throw new Error('Description is required');
-
     state.todos.push(new Todo(descripcion));
+
+    saveStateToLocalStorage();
 }
+
+
 
 
 /**
@@ -69,19 +85,31 @@ const toggleTodo = (todoId) => { //UN TOGGLE COMO UNA ACTUALIZACION
         return todo;
     })
 
+    saveStateToLocalStorage();
+
 }
+
+
 
 
 
 const deleteTodo = (todoId) => {
     state.todos = state.todos.filter(todo => todo.id !== todoId);//vamos a regresar todos los todos que no coincida con el id (todoId)
+    
+    saveStateToLocalStorage();
 }
+
+
 
 
 
 const deleteCompleted = (todoId) => {
     state.todos = state.todos.filter(todo => todo.done);
+
+    saveStateToLocalStorage();
 }
+
+
 
 
 /**
@@ -90,7 +118,12 @@ const deleteCompleted = (todoId) => {
  */
 const setFilter = (newFilter = Filters.All) => {
     state.filter = newFilter;
+
+    saveStateToLocalStorage();
 }
+
+
+
 
 
 const getCurrentFilter = () => { 
