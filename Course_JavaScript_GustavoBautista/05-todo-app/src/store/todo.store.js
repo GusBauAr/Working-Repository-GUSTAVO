@@ -1,5 +1,6 @@
 import{Todo} from '../todos/models/todo.model';
 
+//tener un store independiente es muy util por que aqui en todos los demas componentes en toda la parte de la aplicacion podamos tener acceso a roda la informacion de nuestra DATA a nuestra informacion global de la misma 
 
 export const Filters = {
     All: 'all',
