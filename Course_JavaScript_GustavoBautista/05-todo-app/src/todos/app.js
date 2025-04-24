@@ -38,6 +38,8 @@ export const App = (elementId) => { //funcion en flecha
     //refrencias HTML
     
     const newDescriptionInput = document.querySelector(ElemenIDs.NewTodoInput);
+    const TodoLisUL = document.querySelector(ElemenIDs.TodoList);
+
 
     //listeners
 
@@ -49,6 +51,13 @@ export const App = (elementId) => { //funcion en flecha
         displayTodos();
         event.target.value = '';
     })
-    
 
+    TodoLisUL.addEventListener('click', (event) => {
+        const element = event.target.closest('[data-id]');
+        todoStore.toggleTodo(element.getAttribute('data-id'));
+        displayTodos();
+
+    })
+    
+ 
 }
