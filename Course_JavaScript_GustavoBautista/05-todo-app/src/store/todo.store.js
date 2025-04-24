@@ -16,6 +16,8 @@ const state = {
         new Todo('Piedra del alma'),
         new Todo('Piedra del infinito'),
         new Todo('Piedra del tiempo'),
+        new Todo('Piedra del poder'),
+        new Todo('Piedra del realidad'),
     ],
     filter: Filters.All,
 }
@@ -60,7 +62,13 @@ const addTodo = ( descripcion) => { //AGREGAR
  * @param {String} todoId /es un identificador
  */
 const toggleTodo = (todoId) => { //UN TOGGLE COMO UNA ACTUALIZACION
-    throw new  Error('Not implemented');
+    state.todos = state.todos.map(todo =>{ //este es un arreglo y usaremos map nos permite que mediante el callback regresar los mismos valores que va tener cada uno de los elementos de ese arreglo y tambien regresa un nuevo arreglo
+        if(todo.id ===  todoId){
+            todo.done = !todo.done;
+        }
+        return todo;
+    })
+
 }
 
 
