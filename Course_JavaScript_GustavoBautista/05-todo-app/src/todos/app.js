@@ -4,6 +4,7 @@ import { renderTodos } from './models/use-cases';
 
 
 const ElemenIDs ={
+    ClearCompletedButton: '.clear-completed',
     TodoList: '.todo-list',
     NewTodoInput: '#new-todo-input',
 
@@ -39,6 +40,7 @@ export const App = (elementId) => { //funcion en flecha
     
     const newDescriptionInput = document.querySelector(ElemenIDs.NewTodoInput);
     const TodoLisUL = document.querySelector(ElemenIDs.TodoList);
+    const clearCompletedButton = document.querySelector (ElemenIDs.ClearCompletedButton);
 
 
     //listeners
@@ -66,6 +68,10 @@ export const App = (elementId) => { //funcion en flecha
         displayTodos();
     })
 
+    clearCompletedButton.addEventListener('click', () =>{
+        todoStore.deleteCompleted();
+        displayTodos(); //para renderizar todo
+    });
 
     
  
