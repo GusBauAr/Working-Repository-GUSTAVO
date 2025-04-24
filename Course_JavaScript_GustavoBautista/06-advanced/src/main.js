@@ -1,6 +1,7 @@
 import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
+import { environmentsComponent } from './concepts/01-environments';
 
 
 document.querySelector('#app').innerHTML = `
@@ -18,5 +19,15 @@ document.querySelector('#app').innerHTML = `
     
   </div>
 `;
+const element = document.querySelector('.card');
 
-console.log('hola mundo')
+environmentsComponent(element);
+
+
+
+//todo:que es variables de entorno?
+//?son variables que dependiendo del entorno o donde se este ejecutando la aplicacion van a tener un valor distinto.
+
+//?por jem:  yo estoy de manera local, mis variables se ejecuten a mi localhost pero cuando yo estoy en produccion puede que yo cambie el localhost por una URL en especifico.
+
+//?quiero que mis variables sean de entorno
