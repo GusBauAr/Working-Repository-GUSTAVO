@@ -5,6 +5,8 @@ import { renderTodos } from './models/use-cases';
 
 const ElemenIDs ={
     TodoList: '.todo-list',
+    NewTodoInput: '#new-todo-input',
+
 }
 
 /**
@@ -30,5 +32,23 @@ export const App = (elementId) => { //funcion en flecha
         displayTodos();
 
     })();
+
+
+
+    //refrencias HTML
+    
+    const newDescriptionInput = document.querySelector(ElemenIDs.NewTodoInput);
+
+    //listeners
+
+    newDescriptionInput.addEventListener('keyup', (event) => {
+        if (event.keyCode !== 13) return;
+        if (event.target.value.trim().length === 0)return;
+
+        todoStore.addTodo(event.target.value);
+        displayTodos();
+        event.target.value = '';
+    })
+    
 
 }
