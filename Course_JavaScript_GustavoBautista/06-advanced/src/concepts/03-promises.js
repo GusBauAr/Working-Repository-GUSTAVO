@@ -26,20 +26,44 @@ export const promiseComponent = (element) => {
         `
     }
 
+    //PROMISE.ALL---->nos permite ejecutar todas las funciones o todas las promesas que definamos en unarreglo de promesas
+
     const id1 = '5d86371fd55e2e2a30fe1cc3';
     const id2 = '5d86371f25a058e5b1c8a65e';
 
+    //se esta ejecutando a solicitar hambas promesas de manera simultanea
+    Promise.all([
+        findHero(id1),
+        findHero(id2),
+    ])
+    //el then se ejecuta cuando todas las promesas se cumplen correctamente
+    .then(([hero1, hero2]) => renderTwoHeroes(hero1, hero2)) 
+    .catch (renderError);
 
-    findHero( id1 )
-        .then((hero1) =>{ //esto es un callback
+    //!FORMA 2 REFACTORIZAR
+    // let hero1;
 
-            findHero( id2 )
-                .then ( hero2 => {
-                    renderTwoHeroes(hero1, hero2)
-            })
-            .catch (renderError);
-        })
-        .catch (renderError);
+    // findHero (id1)
+    //     .then( hero => {
+    //         hero1 = hero;
+    //         return findHero(id2);
+    //     }).then( hero2 => {
+    //         renderTwoHeroes(hero1, hero2); 
+    //     })
+    //     .catch (renderError);
+
+
+    //!FORMA 1
+    // findHero( id1 )
+    //     .then((hero1) =>{ //esto es un callback
+
+    //         findHero( id2 )
+    //             .then ( hero2 => {
+    //                 renderTwoHeroes(hero1, hero2)
+    //         })
+    //         .catch (renderError);
+    //     })
+    //     .catch (renderError);
 
 
 
