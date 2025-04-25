@@ -8,9 +8,11 @@ import { heroes } from '../data/heroes';
 export const asyncComponent = (element) => {
 
     const id1 = '5d86371f2343e37870b91ef1';
+    console.log('Inicio de componentes')
     findHero(id1) //const findHero: (id: string)----> es una funcion que tiene un argumento id de tipo string  => ----> y retorna Promise<string> -----> una promesa que resuelve un string
         .then( name => element.innerHTML = name)
         .catch( error => element.innerHTML = error)
+    console.log('fin del componente')
 }
 
 //creamos una funcion
@@ -24,6 +26,9 @@ export const asyncComponent = (element) => {
 const findHero = async (id) => {
 
     const hero = heroes.find( hero => hero.id === id);
+    if(!hero)
+    throw `Hero with id ${ id} not found`;
+    
 
     return hero.name;
 }
