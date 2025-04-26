@@ -19,6 +19,29 @@ export  const BreackingbadApp =  async(element) => {
 
     document.querySelector('#app-title').innerHTML = 'BreakingBad App';
     element.innerHTML = 'Loading';
-    const quote = await fetchQuote();
-    element.innerHTML = 'tenemos data';
+    // await fetchQuote();
+    
+    const  quoteLabel = document.createElement('blockquote');
+    const  authoLabel = document.createElement('h3');
+    const  nextQuoteButton = document.createElement('button');
+    nextQuoteButton.innerText = 'Next Quote';
+
+
+
+    const renderQuote = ( data ) => {
+        quoteLabel.innerHTML = data.quote;
+        authoLabel.innerHTML = data.author;
+        element.append( quoteLabel, authoLabel, nextQuoteButton);
+    }
+
+
+    //añadir listener
+    nextQuoteButton.addEventListener ('click', async() =>{
+        element.innerHTML = 'Loading';
+        const quote = await fetchQuote();
+        renderQuote(quote);
+    })
+
+    fetchQuote()
+        .then( renderQuote);
 }
