@@ -25,5 +25,6 @@ export const UsersApp = async( element ) => {
         const user = await saveUser(userLike);
         usersStore.onUserChanged(user);
         renderTable();
+
     });
 }
