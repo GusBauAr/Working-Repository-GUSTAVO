@@ -34,6 +34,14 @@ export default {
     reloadPage,
     
 
+    /**
+     * 
+     * @returns {User[]}
+     */
     getUsers: () => [...state.users], //los objetos pasan por referencia
+    /**
+     * 
+     * @returns {Number}
+     */
     getCurrentPage: () => state.currentPage,// los objetos pasan por valor
 }
