@@ -19,7 +19,7 @@ export const loadUsersByPage = async ( page = 1 ) => {
 
     if ( page > data.last ) return [];
 
-    const users = data.data.map( localhostUserToModel );
+    const users = data.map( localhostUserToModel );
 
     return users;
 
