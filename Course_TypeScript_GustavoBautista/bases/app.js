@@ -1,2 +1,3 @@
-var msg = 'hola mundo';
-console.log(msg);
+"use strict";
+const smg = 'hola mundo';
+console.log(smg);
