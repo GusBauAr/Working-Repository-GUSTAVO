@@ -5,8 +5,8 @@
       "isActive": true,
       "balance": 2010.88,
       "avatar": "http://placehold.it/32x32",
-      "first_name": "Lee",
-      "last_name": "Howe",
+      "first_name": "Leeeeee",
+      "last_name": "Howeee",
       "gender": "male"
     },
     {
@@ -359,6 +359,13 @@
       "first_name": "Maynard",
       "last_name": "Faulkner",
       "gender": "male"
+    },
+    {
+      "balance": 4343434,
+      "first_name": "Gustavoo",
+      "isActive": true,
+      "last_name": "Bautista Arce",
+      "id": "2xVY9w3"
     }
   ]
 }

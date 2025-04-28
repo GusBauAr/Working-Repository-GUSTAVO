@@ -25,7 +25,7 @@ const loadPreviousPage = async() => {
 
 /**
  * 
- * @param {User} updatdeUser
+ * @param {User} updatedUser
  */
 const onUserChanged = (updatedUser) => {
 
