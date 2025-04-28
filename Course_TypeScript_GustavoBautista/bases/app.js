@@ -41,3 +41,4 @@ function sayHelloo(msg) {
     const aa = 10;
     console.log(aa);
 })();
+//?el objetivo de la funcion anonima fue para crear muchos archivos en un proyecto y de esa manera no cae dentro del scout global
