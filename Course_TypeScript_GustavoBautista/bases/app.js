@@ -23,9 +23,9 @@ b4 = []; //puede ser un arrelo
 b4 = true; //puede ser un boolean
 //..................................................................................
 //se activo el tsconfig.json "noImplicitAny": true, para no tener tipos de problemas  
-function sayHello(msg) {
-    console.log(msg);
-}
+// function sayHello (msg){
+//     console.log(msg);
+// }
 // vamos a a definir que tipo de dato es (msg) y nos muestra los metodos y propiedades
 function sayHelloo(msg) {
     console.log(msg + ' ' + 'Gustavo');
