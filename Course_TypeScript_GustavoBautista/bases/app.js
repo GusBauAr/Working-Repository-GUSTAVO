@@ -1,22 +1,22 @@
 "use strict";
-const a = 10; // a es 10
-let b = 10; // b es number
+var a = 10; // a es 10
+var b = 10; // b es number
 //por que no es igual???
 //cuando creamos una constante TypeScript crea ese tipo y ese tipo sabe que (a es 10) por que no se puede cambiar es una constante 
 //cuando creamos una variable declarada con let que si se puede cambiar a cualquier tipo de dato por que muestra el nombre (ejm: number. string, boolean,etc....)
 //!IMPORTANTE
 //!No es recomendable que typeScript infiera en el tipo de dato
 //!hata donde sea posile hay que acostumbrarnos a colocar el tipo de dato
-const a2 = 10; // a2 es number
-let b2 = 10; // b2 es number
+var a2 = 10; // a2 es number
+var b2 = 10; // b2 es number
 //? EJEMPLOS:
-const a3 = 10; // a3 es number
-let b3; // b3 es number
+var a3 = 10; // a3 es number
+var b3; // b3 es number
 b3 = 32323; // b3 es number
 //!IMPORTANTE
 //!Si nosotros no colocamos el tipo de dato(:number)nos va salir any ---> significa(Cualquier cosa)
-const a4 = 10; // a3 es number
-let b4; // b3 es any
+var a4 = 10; // a3 es number
+var b4; // b3 es any
 //!cunado es any perdemos control  
 b4 = {}; // puede ser un objeto
 b4 = []; //puede ser un arrelo
@@ -37,8 +37,8 @@ function sayHelloo(msg) {
 //! let bb: string;
 // .................................................................
 //?lo que vamos a estar haciendo es crear una funcion anonima autoinvocada y no se quiere que nuestros archivos chequen entre si
-(() => {
-    const aa = 10;
+(function () {
+    var aa = 10;
     console.log(aa);
 })();
 //?el objetivo de la funcion anonima fue para crear muchos archivos en un proyecto y de esa manera no cae dentro del scout global
