@@ -16,10 +16,29 @@
         name:'Clark kent',
         age: 60,
         powers:['super','fuerza'],
-
+    }
+    //..............................................................................
+    //!CREAR OBJETOS CON TIPOS ESPECIFICOS
+    //en los objetos no importa la posicion de la propiedades ({name: string, age:number, powers:string[]})
+    //Nosotros podemos definir que metodos o propiedades puede tener en este caso el tipo: name es string, age es number y powers es un arreglo de strings
+    let flash2: {name: string, age?:number, powers:string[]}  ={
+       
+        name:'Gustavo Bautista', 
+        age: 24,
+        powers:['super velocidad', 'viajar en el tiempo']
+    }
+    
+    //si nos falta definir una propiedad nos va dar error en flash2 por que si o si necesita ya que la hemos definido
+    //pero tambien podemos colocar que puede ser opcional con el signo de (?)---> ejm: (age?:number)
+    flash2 = {
+        name:'Clark kent',
+        // age: 60,
+        powers:['super','fuerza'],
     }
 
 
 
 
+
 })()
+
