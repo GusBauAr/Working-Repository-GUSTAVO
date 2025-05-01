@@ -31,3 +31,4 @@
     //     max = 10,
     // }
 })();
+//# sourceMappingURL=enums.js.map

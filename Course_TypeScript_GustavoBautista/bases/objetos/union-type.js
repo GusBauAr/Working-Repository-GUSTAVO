@@ -13,3 +13,4 @@
     console.log(typeof myCustomVariable);
     console.log(myCustomVariable);
 })();
+//# sourceMappingURL=union-type.js.map

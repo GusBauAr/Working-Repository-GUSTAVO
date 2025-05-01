@@ -66,3 +66,4 @@
     //que pasa si manana me dicen que los powers ya no es arreglo de string y ahora es arreglo de numeros, entonces tenemos que cambiar en todos los objetos ese cambio y entonces es mucho trabao y moroso
     //?para evitar eso vamos a crear tipos personalizados
 })();
+//# sourceMappingURL=objects.js.map

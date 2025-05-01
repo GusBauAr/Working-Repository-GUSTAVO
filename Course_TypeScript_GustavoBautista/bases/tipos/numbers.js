@@ -17,3 +17,4 @@
     //pero nos puede conllevar a otro tipo de errores, errores de logica en la aplicacion
     console.log({ avengers: avengers });
 })();
+//# sourceMappingURL=numbers.js.map

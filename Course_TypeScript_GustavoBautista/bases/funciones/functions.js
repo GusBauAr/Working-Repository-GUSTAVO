@@ -18,3 +18,4 @@
     //!por que el dia de manñana alguien puede usar mi funcion, metodos, objetos, classes, lo que sea que yo haga
     var heroName = returnName(); // aqui nos sale que es string
 })();
+//# sourceMappingURL=functions.js.map

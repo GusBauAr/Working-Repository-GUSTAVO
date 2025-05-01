@@ -8,3 +8,4 @@
     //pero si no tiene nombre al lastName colocamos un operador ( || OR ) colocando que no tiene apellido(no lastname) ${lastName || 'no lastname'}
     console.log([name]);
 })();
+//# sourceMappingURL=args-optional.js.map

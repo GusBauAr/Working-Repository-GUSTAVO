@@ -16,3 +16,4 @@
     var name = fullName('gustavo', 'bautista', true);
     console.log([name]);
 })();
+//# sourceMappingURL=args-default.js.map

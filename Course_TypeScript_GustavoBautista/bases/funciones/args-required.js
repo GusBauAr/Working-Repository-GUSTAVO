@@ -15,3 +15,4 @@
     //luego imprimimos el name en consola si la quiseramos ver
     console.log([name]);
 })();
+//# sourceMappingURL=args-required.js.map

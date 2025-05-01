@@ -6,3 +6,4 @@
     // isSuperman = true && true; //true
     console.log({ isSuperman: isSuperman });
 })();
+//# sourceMappingURL=booleans.js.map

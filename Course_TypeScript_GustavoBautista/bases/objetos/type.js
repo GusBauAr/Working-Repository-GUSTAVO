@@ -21,3 +21,4 @@
         }
     };
 })();
+//# sourceMappingURL=type.js.map

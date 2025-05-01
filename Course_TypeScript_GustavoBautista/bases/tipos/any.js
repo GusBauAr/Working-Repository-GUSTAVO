@@ -51,3 +51,4 @@
     console.log(existtttt);
     console.log(powerrrrr);
 })();
+//# sourceMappingURL=any.js.map

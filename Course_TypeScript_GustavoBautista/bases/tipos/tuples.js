@@ -17,3 +17,4 @@
     // const hero: [string, number] =['dr strange', 100];
     //..................................................................................
 })();
+//# sourceMappingURL=tuples.js.map

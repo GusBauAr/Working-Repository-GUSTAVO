@@ -18,3 +18,4 @@
     //!IMPORTANTE
     //?el void es muy utilizado que mi funcion no regresa nada y eso ayuda mucho en la documentacion y lectura de nuestras funciones
 })();
+//# sourceMappingURL=void.js.map
