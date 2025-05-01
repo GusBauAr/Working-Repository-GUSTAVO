@@ -36,8 +36,28 @@
         powers:['super','fuerza'],
     }
 
+    //.............................................................................
+    //!METODOS DENTRO DE LOS OBJETOS
+    //lo que vamso hacer es colocar la definicion del tipo de la funcion getName que retorna un string
+    //                                                          Es una funcion que no recibe ningun argumento y la salida es un string y es de tipo opcional (?)
+    let flash3: {name: string, age?:number, powers:string[], getName?: () => string}  ={
+       
+        name:'Gustavo Bautista', 
+        age: 24,
+        powers:['super velocidad', 'viajar en el tiempo']
+    }
+    
+    flash3 = {
+        name:'Clark kent',
+        // age: 60,
+        powers:['super','fuerza'],
 
+        getName(){
+            return this.name; //retorna este nombre
+        }
+    }
 
+    console.log(flash3.getName?.())
 
 
 })()

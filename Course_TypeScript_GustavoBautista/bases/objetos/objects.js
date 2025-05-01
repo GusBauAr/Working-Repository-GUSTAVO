@@ -1,5 +1,6 @@
 "use strict";
 (function () {
+    var _a;
     //creamos un objeto literario
     var flash = {
         //typeScript ya lo lee por defecto el tipo de variable que estoy utilizando
@@ -30,4 +31,22 @@
         // age: 60,
         powers: ['super', 'fuerza'],
     };
+    //.............................................................................
+    //!METODOS DENTRO DE LOS OBJETOS
+    //lo que vamso hacer es colocar la definicion del tipo de la funcion getName que retorna un string
+    //                                                          Es una funcion que no recibe ningun argumento y la salida es un string y es de tipo opcional (?)
+    var flash3 = {
+        name: 'Gustavo Bautista',
+        age: 24,
+        powers: ['super velocidad', 'viajar en el tiempo']
+    };
+    flash3 = {
+        name: 'Clark kent',
+        // age: 60,
+        powers: ['super', 'fuerza'],
+        getName: function () {
+            return this.name; //retorna este nombre
+        }
+    };
+    console.log((_a = flash3.getName) === null || _a === void 0 ? void 0 : _a.call(flash3));
 })();
