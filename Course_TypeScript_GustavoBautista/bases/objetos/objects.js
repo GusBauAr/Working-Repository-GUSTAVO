@@ -49,4 +49,20 @@
         }
     };
     console.log((_a = flash3.getName) === null || _a === void 0 ? void 0 : _a.call(flash3));
+    //.............................................................................
+    //!PROBLEMAS CON LA DEFINICION DE LINEA
+    //que pasaria si mañana tengo que crear un objeto que luzca exactamente igual...??? entonces hacemos asi...
+    var flash4 = {
+        name: 'Gustavo Bautista',
+        age: 24,
+        powers: ['super velocidad', 'viajar en el tiempo']
+    };
+    //Clonamos la linea de codigo
+    var superman = {
+        name: 'Clark Kent',
+        age: 60,
+        powers: ['super velocidad']
+    };
+    //que pasa si manana me dicen que los powers ya no es arreglo de string y ahora es arreglo de numeros, entonces tenemos que cambiar en todos los objetos ese cambio y entonces es mucho trabao y moroso
+    //?para evitar eso vamos a crear tipos personalizados
 })();
