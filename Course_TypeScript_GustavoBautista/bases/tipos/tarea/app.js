@@ -1,10 +1,8 @@
 "use strict";
 (function () {
-    // Tipos
-    var batman = 'Bruce'; //✅🐱
-    var superman = 'Clark'; //✅🐱
-    var existe = false; //✅🐱
-    // Tuplas
+    var batman = 'Bruce';
+    var superman = 'Clark';
+    var existe = false;
     var parejaHeroes = [batman, superman];
     parejaHeroes[0] = 'batman';
     parejaHeroes[1] = 'superman';
@@ -12,9 +10,7 @@
     villano[0] = 'lex lutor';
     villano[1] = 5;
     villano[2] = true;
-    // Arreglos
     var aliados = ['Mujer Maravilla', 'Acuaman', 'San', 'Flash'];
-    //Enumeraciones
     var fuerzaFlash = 5;
     var fuerzaSuperman = 100;
     var fuerzaBatman = 1;
@@ -30,14 +26,12 @@
     var fuerza = fuerzaHeroes.fuerzaBatman;
     var fuerza = fuerzaHeroes.fuerzaFlash;
     var fuerza = fuerzaHeroes.fuerzaSuperman;
-    // Retorno de funciones
     function activar_batiseñal() {
         return 'activada';
     }
     function pedir_ayuda() {
         console.log('Auxilio!!!');
     }
-    // Aserciones de Tipo
     var poder = '100';
     var largoDelPoder = poder.length;
     console.log(largoDelPoder);
