@@ -37,7 +37,7 @@
 
     //creamos una funcion
     const  printName = (character: Mutante)=> {
-        console.log(character.realName);
+        // console.log(character.realName);
 
     }
 

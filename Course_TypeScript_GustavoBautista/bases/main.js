@@ -45,7 +45,6 @@ var __extends = (this && this.__extends) || (function () {
     var wolverine = new Xmen('Wolverine', 'Logan');
     var magneto = new Villian('Magneto', 'Magnus');
     var printName = function (character) {
-        console.log(character.realName);
     };
     printName(wolverine);
 })();
@@ -145,5 +144,17 @@ var __extends = (this && this.__extends) || (function () {
         return Xmen2;
     }(Avenger2));
     var wolverine2 = new Xmen2('Wolverineeee2', 'Logannnn2', true);
+})();
+(function () {
+    var Apocalipsis = (function () {
+        function Apocalipsis(name) {
+            this.name = name;
+        }
+        return Apocalipsis;
+    }());
+    var apocalipsis1 = new Apocalipsis('soy apocalipsis1..... el unico');
+    var apocalipsis2 = new Apocalipsis('soy apocalipsis2..... el unico');
+    var apocalipsis3 = new Apocalipsis('soy apocalipsis3..... el unico');
+    console.log(apocalipsis1, apocalipsis2, apocalipsis3);
 })();
 //# sourceMappingURL=main.js.map
