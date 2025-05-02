@@ -54,4 +54,32 @@
     // printAvengers(avengers);
     //....................................................................
 
+
+
+    //.......................................................................................
+    //!                         DESESTRUCTURACION DE ARREGLOS
+    //creamos una nueva constante
+
+    const avengersArr:[string, string, string] = ['Capitan america', 'Ironman', 'Hulk']; //este es un arreglo de strings
+
+    //si nostros hacemos una desestructuracion podemos hacerlo
+    // const ironman = avengersArr[1]// esta es segunda posicion
+    // console.log({ironman})
+
+    //ahora vamos hacer la desestructuracion 
+    //le estamos diciendo intenta desestructuras pero de un objeto[] tenemos que colocar las llaves cuadradas
+    //?const [] =avengersArr;
+
+    //vamos a llamar a Ironman entonces seria segunda posicion 0, (1)
+    //colocamos espacio y luego (,) depues la posicion 1 ironman y luego 2da posicion ignoramos que es hulk
+    const [ capi, ironman, ] = avengersArr;
+    console.log({ironman, capi});
+
+    //cuando hacemos una desestructuracion de arreglos, no impota que nombre lo coloquemos, ejm:
+    //const [capi , ironman,hombre verde ] = avengersArr;
+
+    //!IMPORTANTE
+    //!Simepre coocar el tipo de datos\(const avengersArr:[string, string, string])
+    //const avengersArr:[string, string, string] = ['Capitan america', 'Ironman', 'Hulk']; //este es un arreglo de strings
+
 })()

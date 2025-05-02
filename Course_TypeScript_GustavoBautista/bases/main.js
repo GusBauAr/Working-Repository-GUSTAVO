@@ -25,6 +25,9 @@ var __rest = (this && this.__rest) || function (s, e) {
         console.log(ironman, resto);
     };
     printAvengers(avengers);
+    var avengersArr = ['Capitan america', 'Ironman', 'Hulk'];
+    var capi = avengersArr[0], ironman = avengersArr[1];
+    console.log({ ironman: ironman, capi: capi });
 })();
 (function () {
     var a = 'gustavo';
