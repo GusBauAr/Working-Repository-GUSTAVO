@@ -53,9 +53,30 @@
     console.log(antman2);
     //si queremos ver el avgAge
     console.log(Avenger2.avgAge);//35
+//.............................................................................................................................
+//!                         METODOS PUBLICOS Y PRIVADOS
 
 
+    class Avenger3 {
+                
+        static avgAge:number = 35;//que pasa co los estaticos?????
+        //creamos un metodo estatico
+        static getAvgAge(){
+            return this.name;
+        }
 
+        constructor(private name: string, public team:string, public realName?: string){
+
+        }
+
+        //creamos un metodo publico bio con la concatenacion --->`${this.name}(${this.team})`
+        public bio(){
+            return `${this.name}(${this.team})`
+        }
+    }
+    const antman3 : Avenger3 =new Avenger3('Antman','Capital');
+    console.log(antman3.bio());//esta fuera de la clase
+    console.log(Avenger3.getAvgAge());//se declara aqui el static
     
 
 })()
