@@ -15,6 +15,41 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 (function () {
+    var Mutante = (function () {
+        function Mutante(name, realName) {
+            this.name = name;
+            this.realName = realName;
+        }
+        return Mutante;
+    }());
+    var Xmen = (function (_super) {
+        __extends(Xmen, _super);
+        function Xmen() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Xmen.prototype.salvarMundo = function () {
+            return 'mundo salvado';
+        };
+        return Xmen;
+    }(Mutante));
+    var Villian = (function (_super) {
+        __extends(Villian, _super);
+        function Villian() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Villian.prototype.mundoConquistado = function () {
+            return 'mundo conquistado';
+        };
+        return Villian;
+    }(Mutante));
+    var wolverine = new Xmen('Wolverine', 'Logan');
+    var magneto = new Villian('Magneto', 'Magnus');
+    var printName = function (character) {
+        console.log(character.realName);
+    };
+    printName(wolverine);
+})();
+(function () {
     var Avenger = (function () {
         function Avenger(name, team, realName) {
             this.name = name;
@@ -53,7 +88,6 @@ var __extends = (this && this.__extends) || (function () {
         function Avenger(name, realName) {
             this.name = name;
             this.realName = realName;
-            console.log('constructor Avenger llamado');
         }
         Avenger.prototype.getFullName = function () {
             return "".concat(this.name, " ").concat(this.realName);
@@ -65,22 +99,17 @@ var __extends = (this && this.__extends) || (function () {
         function Xmen(name, realName, isMutant) {
             var _this = _super.call(this, name, realName) || this;
             _this.isMutant = isMutant;
-            console.log('constructor Xmen llamado');
             return _this;
         }
         Xmen.prototype.getFullNameDesdeXmen = function () {
-            console.log(_super.prototype.getFullName.call(this));
         };
         return Xmen;
     }(Avenger));
     var wolverine = new Xmen('Wolverine', 'Logan', true);
-    console.log(wolverine);
-    wolverine.getFullNameDesdeXmen();
     var Avenger2 = (function () {
         function Avenger2(name, realName) {
             this.name = name;
             this.realName = realName;
-            console.log('constructor Avenger2 llamado');
         }
         Avenger2.prototype.getFullName2 = function () {
             return "".concat(this.name, " ").concat(this.realName);
@@ -92,7 +121,6 @@ var __extends = (this && this.__extends) || (function () {
         function Xmen2(name, realName, isMutant) {
             var _this = _super.call(this, name, realName) || this;
             _this.isMutant = isMutant;
-            console.log('constructor Xmen2 llamado');
             return _this;
         }
         Object.defineProperty(Xmen2.prototype, "fullname", {
@@ -113,12 +141,9 @@ var __extends = (this && this.__extends) || (function () {
             configurable: true
         });
         Xmen2.prototype.getFullNameDesdeXmen2 = function () {
-            console.log(_super.prototype.getFullName2.call(this));
         };
         return Xmen2;
     }(Avenger2));
     var wolverine2 = new Xmen2('Wolverineeee2', 'Logannnn2', true);
-    wolverine2.fullName = 'gustavo';
-    console.log(wolverine2.fullname);
 })();
 //# sourceMappingURL=main.js.map

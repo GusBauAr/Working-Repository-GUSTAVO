@@ -8,7 +8,7 @@
             public realName: string,
 
         ){
-            console.log('constructor Avenger llamado')
+            // console.log('constructor Avenger llamado')
         }
         //nos creamos una propieda privada
         getFullName(){
@@ -30,11 +30,11 @@
             //por un momento hay que llamar al super()
             //luego pasamos estos argumento al super
             super(name, realName)
-            console.log('constructor Xmen llamado');
+            // console.log('constructor Xmen llamado');
         }
         //creamos un metodo para llamar al getFullName
         getFullNameDesdeXmen(){
-            console.log(super.getFullName())
+            // console.log(super.getFullName())
 
         }
 
@@ -44,8 +44,8 @@
     const wolverine = new Xmen('Wolverine', 'Logan', true);
 
     //ejecutamos
-    console.log(wolverine);
-    wolverine.getFullNameDesdeXmen();
+    // console.log(wolverine);
+    // wolverine.getFullNameDesdeXmen();
 
 //....................................................................................
 
@@ -56,7 +56,7 @@
             public realName: string,
 
         ){
-            console.log('constructor Avenger2 llamado')
+            // console.log('constructor Avenger2 llamado')
         }
         getFullName2(){
             return `${this.name} ${this.realName}`
@@ -74,7 +74,7 @@
             public isMutant:boolean,
         ){
             super(name, realName)
-            console.log('constructor Xmen2 llamado');
+            // console.log('constructor Xmen2 llamado');
         }
 
         //get es un metodo
@@ -91,7 +91,7 @@
         }
 
         getFullNameDesdeXmen2(){
-            console.log(super.getFullName2())
+            // console.log(super.getFullName2())
 
         }
 
@@ -101,6 +101,6 @@
 
     // wolverine2.getFullNameDesdeXmen2();
     
-    wolverine2.fullName = 'gustavo'
-    console.log(wolverine2.fullname);
+    // wolverine2.fullName = 'gustavo'
+    // console.log(wolverine2.fullname);
 })()
