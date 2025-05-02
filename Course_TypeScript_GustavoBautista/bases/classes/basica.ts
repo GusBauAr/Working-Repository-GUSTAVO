@@ -23,12 +23,12 @@
 
         }
     }
-
-    //si yo quiero utilizarlas
-    const antman : Avenger =new Avenger('Antman','Capital');//ahora llenamos dentro del parentecis
-    console.log(antman);//cuando colocamos punto vemos que nos muestra solo los publicos
-                        //pero no me muestra el static..????, si queremos tener acceso al estatico tenemos que hacer:
-    // console.log(Avenger.avgAge )//Ahora nos muestra y el resultado en consola es 35
+//!lo comentamos para que no veamos en la consola lo que se esta ejecutando de aqui
+    // //si yo quiero utilizarlas
+    // const antman : Avenger =new Avenger('Antman','Capital');//ahora llenamos dentro del parentecis
+    // console.log(antman);//cuando colocamos punto vemos que nos muestra solo los publicos
+    //                     //pero no me muestra el static..????, si queremos tener acceso al estatico tenemos que hacer:
+    // // console.log(Avenger.avgAge )//Ahora nos muestra y el resultado en consola es 35
 //.............................................................................................................................
 //!                         FORMA CORTA DE ASIGNARPROPIEDADES
 
@@ -49,10 +49,11 @@
 
         }
     }
-    const antman2 : Avenger2 =new Avenger2('Antman','Capital');
-    console.log(antman2);
-    //si queremos ver el avgAge
-    console.log(Avenger2.avgAge);//35
+    //!lo comentamos para que no veamos en la consola lo que se esta ejecutando de aqui
+    // const antman2 : Avenger2 =new Avenger2('Antman','Capital');
+    // console.log(antman2);
+    // //si queremos ver el avgAge
+    // console.log(Avenger2.avgAge);//35
 //.............................................................................................................................
 //!                         METODOS PUBLICOS Y PRIVADOS
 
@@ -62,7 +63,7 @@
         static avgAge:number = 35;//que pasa co los estaticos?????
         //creamos un metodo estatico
         static getAvgAge(){
-            return this.name;
+            // return this.name;
         }
 
         constructor(private name: string, public team:string, public realName?: string){
@@ -74,9 +75,11 @@
             return `${this.name}(${this.team})`
         }
     }
-    const antman3 : Avenger3 =new Avenger3('Antman','Capital');
-    console.log(antman3.bio());//esta fuera de la clase
-    console.log(Avenger3.getAvgAge());//se declara aqui el static
+
+//!lo comentamos para que no veamos en la consola lo que se esta ejecutando de aqui
+    // const antman3 : Avenger3 =new Avenger3('Antman','Capital');
+    // console.log(antman3.bio());//esta fuera de la clase
+    // console.log(Avenger3.getAvgAge());//se declara aqui el static
     
 
 })()
