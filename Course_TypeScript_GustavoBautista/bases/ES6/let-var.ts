@@ -4,7 +4,7 @@
     //variable LET
     //la variable Var ya no se usa la mayoria de lso navegadores no esta compatible, ya no se debe de trabajar con var
     let a ='gustavo';
-    console.log(a);
+    // console.log(a);
     
     //las contantes son muy utilizadas para trabajr con variables
     const nombre = 'gustavo';
