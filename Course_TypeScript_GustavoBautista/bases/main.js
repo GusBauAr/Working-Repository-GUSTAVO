@@ -30,6 +30,25 @@ var __rest = (this && this.__rest) || function (s, e) {
     console.log({ ironman: ironman, capi: capi });
 })();
 (function () {
+    var ironman = {
+        name: 'Ironman',
+        weapon: 'Armorsuit',
+    };
+    var capAmerica = {
+        name: 'Capitan America',
+        weapon: 'Escudo',
+    };
+    var thor = {
+        name: 'Thor',
+        weapon: 'Martillo',
+    };
+    var avengers = [ironman, capAmerica, thor];
+    for (var _i = 0, avengers_1 = avengers; _i < avengers_1.length; _i++) {
+        var avenger = avengers_1[_i];
+        console.log(avenger.name, avenger.weapon);
+    }
+})();
+(function () {
     var a = 'gustavo';
     var nombre = 'gustavo';
     var heroe = {
