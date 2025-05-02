@@ -76,5 +76,49 @@ var __extends = (this && this.__extends) || (function () {
     var wolverine = new Xmen('Wolverine', 'Logan', true);
     console.log(wolverine);
     wolverine.getFullNameDesdeXmen();
+    var Avenger2 = (function () {
+        function Avenger2(name, realName) {
+            this.name = name;
+            this.realName = realName;
+            console.log('constructor Avenger2 llamado');
+        }
+        Avenger2.prototype.getFullName2 = function () {
+            return "".concat(this.name, " ").concat(this.realName);
+        };
+        return Avenger2;
+    }());
+    var Xmen2 = (function (_super) {
+        __extends(Xmen2, _super);
+        function Xmen2(name, realName, isMutant) {
+            var _this = _super.call(this, name, realName) || this;
+            _this.isMutant = isMutant;
+            console.log('constructor Xmen2 llamado');
+            return _this;
+        }
+        Object.defineProperty(Xmen2.prototype, "fullname", {
+            get: function () {
+                return "".concat(this.name, " - ").concat(this.realName);
+            },
+            enumerable: false,
+            configurable: true
+        });
+        Object.defineProperty(Xmen2.prototype, "fullName", {
+            set: function (name) {
+                if (name.length < 3) {
+                    throw new Error('el nombre debe de ser mayor a 3 letras');
+                }
+                this.name = name;
+            },
+            enumerable: false,
+            configurable: true
+        });
+        Xmen2.prototype.getFullNameDesdeXmen2 = function () {
+            console.log(_super.prototype.getFullName2.call(this));
+        };
+        return Xmen2;
+    }(Avenger2));
+    var wolverine2 = new Xmen2('Wolverineeee2', 'Logannnn2', true);
+    wolverine2.fullName = 'gustavo';
+    console.log(wolverine2.fullname);
 })();
 //# sourceMappingURL=main.js.map
