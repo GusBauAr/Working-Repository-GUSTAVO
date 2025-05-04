@@ -1,4 +1,4 @@
-import { printObject, genericFunction } from "./generics/generics";
+import { printObject, genericFunction,genericFunctionArrow } from "./generics/generics";
 
 
 //!IMPORTANTE
@@ -16,13 +16,13 @@ import { printObject, genericFunction } from "./generics/generics";
 
 //................................................................................
 //vamos a llamar al genericFunction
-console.log(genericFunction(3.35527).toFixed(2)); //este toFixed es para mostrar 2 decimales
-console.log(genericFunction('Hola mundo gus').toFixed(2));//nos sale error
-console.log(genericFunction(new Date()).toFixed(2));//nos sale error
+console.log(genericFunctionArrow(3.35527).toFixed(2)); //este toFixed es para mostrar 2 decimales-----> es de tipo numerico
+console.log(genericFunctionArrow('Hola mundo gus').toUpperCase());//nos sale error-----> es de tipo string
+console.log(genericFunctionArrow(new Date()).getDate());//nos sale error----> es de tipo date
 
 //no se puede y aqui es donde entra los genericos
 //nosostros sabemos que esta funcion puede recibir cualquier tipo de objeto pero la salida va ser exactamento igual al mismo objeto de entada
 //si mando un number voy a tener metodos y propiedades de numeros
 //si mando un string voy a tener metodos y propiedades de un string
- 
+
 
