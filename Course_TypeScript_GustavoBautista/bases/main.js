@@ -1,38 +1,14 @@
 "use strict";
-(function () {
-    var flash = {
-        name: 'Gustavo Bautista',
-        age: 24,
-        powers: ['super velocidad', 'viajar en el tiempo']
+var Validations;
+(function (Validations) {
+    Validations.validateText = function (text) {
+        return (text.length > 3) ? true : false;
     };
-    var superman = {
-        name: 'Clark Kent',
-        age: 60,
-        powers: ['super velocidad'],
-        getName: function () {
-            return this.name;
-        }
+    var validateDate = function (myDate) {
+        return (isNaN(myDate.valueOf()))
+            ? false
+            : true;
     };
-})();
-
-(function () {
-    var client = {
-        name: 'gustavo',
-        age: 20,
-        adress: {
-            id: 125,
-            zip: 'k23 SUD',
-            city: 'ottawa'
-        }
-    };
-    var client2 = {
-        name: 'Gustavo',
-        age: 30,
-        adress: {
-            id: 125,
-            zip: 'k23 SUD',
-            city: 'ottawa',
-        }
-    };
-})();
+})(Validations || (Validations = {}));
+console.log(Validations.validateText('gus'));
 //# sourceMappingURL=main.js.map
