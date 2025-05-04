@@ -106,4 +106,4 @@
 
 //!las interfaces no crean instancias
 //no se puede hacer
-const  nuevoCliente = new  Client()// no puede por que Client es una interface, no sirve para crear instanias
+const  nuevoCliente = new  Client()// no puede por que Client es una interface, no sirve para crear

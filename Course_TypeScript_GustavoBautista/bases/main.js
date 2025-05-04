@@ -14,6 +14,7 @@
         }
     };
 })();
+
 (function () {
     var client = {
         name: 'gustavo',
