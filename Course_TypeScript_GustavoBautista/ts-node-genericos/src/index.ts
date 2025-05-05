@@ -6,6 +6,7 @@ import { getPokemon } from "./generics/get-pokemon";
 
 // // import { Hero } from "./interfaces/hero";
 // // import { Villain } from "./interfaces/villain";
+import { Pokemon } from './interfaces/pokemon';
 
 
 // //!IMPORTANTE
@@ -62,6 +63,6 @@ import { getPokemon } from "./generics/get-pokemon";
 //finally: cundo termina
 //catch:por si da un error
 getPokemon(4)//se va quejar por que esta esperanod un argumento colocamos numero 4
-    .then(resp => console.log(resp))
+    .then(Pokemon => console.log(Pokemon.sprites.front_default))
     .catch(error => console.error(error))
     .finally(() => console.log('fin del getPokemon'));
