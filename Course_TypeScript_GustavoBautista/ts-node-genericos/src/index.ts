@@ -2,6 +2,8 @@
 // import { printObject, genericFunction,genericFunctionArrow } from "./generics/generics";
 // import { Villain, Hero } from "./interfaces";
 
+import { getPokemon } from "./generics/get-pokemon";
+
 // // import { Hero } from "./interfaces/hero";
 // // import { Villain } from "./interfaces/villain";
 
@@ -43,3 +45,23 @@
 // //llamaos a genericFunctionArrow
 // console.log(genericFunctionArrow<Villain>(deadPool))
 // //............................................................................
+
+
+//............................................................................................
+//!EJEMPLO APLICADO A GENERICO
+//instalamos axios para hcer peticiones htpp
+
+
+//ahora hacemos i  console.log del resultado de getPokemon 
+// console.log(getPokemon()); //resultado 1
+//........................................................................................
+
+
+//nos sale los metodos propios de las promesas:
+//them: cuando se resuelva
+//finally: cundo termina
+//catch:por si da un error
+getPokemon(4)//se va quejar por que esta esperanod un argumento colocamos numero 4
+    .then(resp => console.log(resp))
+    .catch(error => console.error(error))
+    .finally(() => console.log('fin del getPokemon'));
