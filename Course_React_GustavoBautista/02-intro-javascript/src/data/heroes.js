@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-export const heroes = [
+const heroes = [
     {
         id: 1,
         name: 'Batman',
@@ -26,3 +26,14 @@ export const heroes = [
         owner: 'Marvel'
     },
 ];
+
+//exportacion individual
+export const owners =['DC', 'Marvel'];//exportaciones individuales
+export default heroes;// exportaciones por defecto
+
+//exportamos un objeto
+// export{
+//     heroes as default,
+//     owners    
+
+// }
