@@ -1,6 +1,10 @@
 export const FirstApp =() =>{
 
     return(
-        <h1>GUSTAVO BAUTISTA ARCE</h1>
+        //esto es un sinomino de un fracmento, es un agrupador de otros elentos htmlen este caso tenemos neustro nodo padre (<></>)
+        <> 
+        <h1>GUSTAVO BAUTISTA ARCE-OZZY</h1>
+        </>
+
     );
 }
