@@ -9,9 +9,11 @@ import './styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <FirstApp/>
+        <FirstApp title={"Hola , soy GUSTAVO"}/>
     </React.StrictMode>
 );
+
+
 
 
 
