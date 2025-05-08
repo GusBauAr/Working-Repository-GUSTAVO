@@ -1,18 +1,8 @@
 
-
-
-const nombre   = 'Fernando';
-const apellido = 'Herrera';
-
-
-// const nombreCompleto = nombre + ' ' + apellido;
-const nombreCompleto = `${ nombre } ${ apellido }`;
-
-console.log( nombreCompleto );
-
-
-function getSaludo(nombre) {
+//no se puede hacer pruebas de algo que no esta exportado
+export function getSaludo(nombre) {
     return 'Hola ' + nombre;
+
+    
 }
 
-console.log( `Este es un texto: ${ getSaludo( nombre ) }  ` );
