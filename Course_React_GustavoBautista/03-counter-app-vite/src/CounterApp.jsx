@@ -12,8 +12,12 @@ export const CounterApp = ({ value }) => {
     const handleAdd  = () =>{
         // console.log(event)
         sentCounter( counter + 1);
-        
-        
+    }
+    const menos =() =>{
+        sentCounter(counter - 1);
+    }
+    const reset = ()=>{
+        sentCounter(value)
     }
 
 
@@ -22,9 +26,9 @@ export const CounterApp = ({ value }) => {
         <div>CounterApp</div>
         <h2> { counter } </h2>
 
-        <button onClick={handleAdd}>
-            +1
-        </button>
+        <button onClick={handleAdd}>+1</button>
+        <button onClick={menos}> -1</button>
+        <button onClick={reset}> Reset</button>
     </>
     
   )
