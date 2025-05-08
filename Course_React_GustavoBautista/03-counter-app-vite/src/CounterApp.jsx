@@ -1,23 +1,27 @@
-
+import {useState} from 'react'; //useState - Hook
 import PropTypes from 'prop-types';
 import React from 'react'
 
 
 
 export const CounterApp = ({ value }) => {
+    //nuestro primer hooks
 
+    const [ counter, sentCounter ] = useState( value )
+    
     const handleAdd  = () =>{
         // console.log(event)
-        console.log('+1');
-        value = 1000;
+        sentCounter( counter + 1);
+        
+        
     }
 
 
   return (
     <>
         <div>CounterApp</div>
-        <h2> { value } </h2>
-        
+        <h2> { counter } </h2>
+
         <button onClick={handleAdd}>
             +1
         </button>
