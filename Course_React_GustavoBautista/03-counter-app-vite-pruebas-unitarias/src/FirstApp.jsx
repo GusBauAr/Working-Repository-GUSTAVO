@@ -1,53 +1,31 @@
-//para que sirbe las propTypes???
-//?sirve para definirle el tipo a las propertypes
 import PropTypes from 'prop-types';
 
-//objeto de las props
-export const FirstApp =({title, subTitle, name}) =>{
+export const FirstApp = ({ title, subTitle, name }) => {
 
-
-    return(
-        //esto es un sinomino de un fracmento, es un agrupador de otros elentos htmlen este caso tenemos neustro nodo padre (<></>)
-        //y colocamos el newMessage en el H1 para que salga Gustavo
-        <> 
-            <h1>{ title }</h1> 
-            <p>{ subTitle }</p>
-            <p>{ name }</p>
-        </>
-
-    );
-}
- 
-//!IMPORTANTE
-//!comunicacion entre componentes props
-//todo lo que definamos en el main.jsx: 
-// <React.StrictMode>
-//        <FirstApp title={"Hola , soy GUSTAVO"}/>
-//    </React.StrictMode>
-//
-//?son props que estamos  mandando del componente padre al componenete hijo que es mi aplicacion FirstApp.jsx
-//esto es igual a un objeto
-
-
-FirstApp.PropTypes ={
-    title: PropTypes.string.isRequired,//el isRequired lo hace obligatorio
-    subTitle: PropTypes.string,
-    
-}
-
-FirstApp.defaultProps ={
-    title: 'No hay titulo',
-    subTitle: 'No hay subtitulo',
-    name: 'Gustavo Bautista',
+  // console.log(props);
+  
+  return (
+    <>
+      <h1 data-testid="test-title"> { title } </h1>
+      {/* <code>{ JSON.stringify( newMessage ) }</code> */}
+      <p>{ subTitle }</p>
+      <p>{ subTitle }</p>
+      <p>{ name }</p>
+    </>
+  )
 }
 
 
+FirstApp.propTypes = {
+  title: PropTypes.string.isRequired,
+  subTitle: PropTypes.string,
+}
 
-
-
-
-
-
+FirstApp.defaultProps = {
+  name: 'Fernando Herrera',
+  subTitle: 'No hay subtítulo',
+  // title: 'No hay título',
+}
 
 
 
