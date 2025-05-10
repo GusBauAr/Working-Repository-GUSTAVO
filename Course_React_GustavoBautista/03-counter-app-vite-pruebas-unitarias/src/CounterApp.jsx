@@ -23,7 +23,7 @@ export const CounterApp = ({ value }) => {
 
   return (
     <>
-        <div>CounterApp</div>
+        <h1>CounterApp</h1>
         <h2> { counter } </h2>
 
         <button onClick={handleAdd}>+1</button>

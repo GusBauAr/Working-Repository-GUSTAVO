@@ -35,7 +35,7 @@ describe('Pruebas en FirstApp.jsx', () => {
 
 
 
- })
+})
 
 
 
