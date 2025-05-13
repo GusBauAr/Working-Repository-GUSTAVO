@@ -1,30 +1,28 @@
-import { useState } from 'react';
+import { useState } from "react";
 
+export const AddCategory = ({setCategories}) => {
+  const [inputValue, setInputValue] = useState("one Puch");
 
-export const AddCategory = () => {
-  
-    const [inputValue, setInputValue] = useState('one Puch');
+  const onInputChange = ({ target }) => {
+    setInputValue(target.value);
+  };
 
-    const onInputChange = ({target})=>{
-        
-        setInputValue(target.value);
-    }
+  const onSubmit = (event) => {
+    event.preventDefault();
+    if (inputValue.trim().length <= 1)return;
+    setCategories( categories =>[inputValue, ... categories])
+    setInputValue('');
 
-    const onSubmit = (event) => {
-        event.preventDefault();
-        console.log(inputValue);
-    }
-  
-    return (
-    <form onSubmit={(event) => onSubmit(event)}>
-        <input
-        type='text'
-        placeholder='Buscar gift'
+  };
+
+  return (
+    <form onSubmit={ onSubmit }>
+      <input
+        type="text"
+        placeholder="Buscar gift"
         value={inputValue}
         onChange={onInputChange}
-    />
+      />
     </form>
-    
-  )
-}
-
+  );
+};
