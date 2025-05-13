@@ -4,11 +4,14 @@ import { AddCategory } from './components/addCategory';
 
 export const GifExpertApp = () => {
   
-    const [categories, setCategories] = useState(['One Punch', ' dragon ballZ']);
+    const [categories, setCategories] = useState(['One Punch','Dragon Ball']);
 
-    //cramos una funcion 
+    
     const onAddCategory = (newCategory) => {
       // console.log(newCategory)
+
+      if (categories.includes(newCategory)) return; //Validar que sean únicos los nombres
+
       setCategories([newCategory, ...categories]);
     }
 
@@ -21,7 +24,7 @@ export const GifExpertApp = () => {
         {/* imput */}
         <AddCategory 
         // setCategories={setCategories} 
-        //el componente AddCategory va a emitir el value
+        //le pasa la funcion al hijo
         onNewCategory = { (value)  => onAddCategory(value)}  
         
         />
@@ -30,11 +33,9 @@ export const GifExpertApp = () => {
         {/* listado de gifs */}
 
         
-
-
         <ol>
           {
-          categories.map(category => {
+          categories.map((category) => {
             return<li key={category}>{category}</li>
           })
           }

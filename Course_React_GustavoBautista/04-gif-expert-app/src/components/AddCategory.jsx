@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const AddCategory = ({onNewCategory}) => {
-  const [inputValue, setInputValue] = useState("one Puch");
+  const [inputValue, setInputValue] = useState('');
 
   const onInputChange = ({ target }) => {
     setInputValue(target.value);
@@ -11,7 +11,10 @@ export const AddCategory = ({onNewCategory}) => {
     event.preventDefault();
     if (inputValue.trim().length <= 1)return;
     // setCategories( categories =>[inputValue, ... categories])
+    
+    //Emitimos el evento 
     onNewCategory(inputValue.trim()); //se va a emitir el onNewCategory si el valor es mayor a 1 caracter se emite el onNewCategory
+    ///limpiamos el input
     setInputValue('');
 
   };
