@@ -19,7 +19,7 @@ export const useFetchGifs = (category) => {
 
   //retorna un objeto, un hook es una funcion que regresa algo  en este caso un objeto  
   return {
-    Image: images,
+    images: images,
     isLoading,
   };
 };
