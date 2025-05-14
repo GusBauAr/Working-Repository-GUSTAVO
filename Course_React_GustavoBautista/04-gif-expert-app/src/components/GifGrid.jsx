@@ -1,13 +1,8 @@
-import { useEffect, useState } from "react";
-import { getGifs } from "../helpers/getGifs";
 import { GifItem } from "./GifItem";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 
 export const GifGrid = ({ category }) => {
-  const [images, setImages] = useState([]);
-
-  useEffect(() => {
-    getGifs(category).then((newImages) => setImages(newImages));
-  }, []);
+  const { images, isLoading } = useFetchGifs(category);
 
   return (
     //creamo sun fragmento
@@ -17,10 +12,7 @@ export const GifGrid = ({ category }) => {
         {
           //mostrar los titulos de las imagenes
           images.map((image) => (
-            <GifItem 
-            key={image.id} 
-            { ...image }
-            />
+            <GifItem key={image.id} {...image} />
           ))
         }
       </div>
