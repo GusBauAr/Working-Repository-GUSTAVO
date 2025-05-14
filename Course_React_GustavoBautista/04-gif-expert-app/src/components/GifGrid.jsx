@@ -10,7 +10,7 @@ export const GifGrid = ({ category }) => {
     <>
       <h3>{category}</h3>
       {
-        isLoading && (<h2>cargando.....</h2>)//mensqje de cargando
+        isLoading && <h2>cargando.....</h2> //mensqje de cargando
       }
       <div className="card-grid">
         {

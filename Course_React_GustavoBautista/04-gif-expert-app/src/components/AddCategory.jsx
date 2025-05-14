@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export const AddCategory = ({onNewCategory}) => {
-  const [inputValue, setInputValue] = useState('');
+export const AddCategory = ({ onNewCategory }) => {
+  const [inputValue, setInputValue] = useState("");
 
   const onInputChange = ({ target }) => {
     setInputValue(target.value);
@@ -9,18 +9,17 @@ export const AddCategory = ({onNewCategory}) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    if (inputValue.trim().length <= 1)return;
+    if (inputValue.trim().length <= 1) return;
     // setCategories( categories =>[inputValue, ... categories])
-    
-    //Emitimos el evento 
+
+    //Emitimos el evento
     onNewCategory(inputValue.trim()); //se va a emitir el onNewCategory si el valor es mayor a 1 caracter se emite el onNewCategory
     ///limpiamos el input
-    setInputValue('');
-
+    setInputValue("");
   };
 
   return (
-    <form onSubmit={ onSubmit }>
+    <form onSubmit={onSubmit}>
       <input
         type="text"
         placeholder="Buscar gift"

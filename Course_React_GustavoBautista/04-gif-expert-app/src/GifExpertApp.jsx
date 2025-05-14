@@ -1,50 +1,36 @@
-import { useState } from 'react';
-import { AddCategory } from './components/addCategory';
-import { GifGrid } from './components/GifGrid';
-
+import { useState } from "react";
+import { AddCategory, GifGrid } from "./components";
 
 export const GifExpertApp = () => {
-  
-    const [categories, setCategories] = useState(['One Punch']);
+  const [categories, setCategories] = useState(["One Punch"]);
 
-    
-    const onAddCategory = (newCategory) => {
-      // console.log(newCategory)
+  const onAddCategory = (newCategory) => {
+    // console.log(newCategory)
 
-      if (categories.includes(newCategory)) return; //Validar que sean únicos los nombres
+    if (categories.includes(newCategory)) return; //Validar que sean únicos los nombres
 
-      setCategories([newCategory, ...categories]);
-    }
-
+    setCategories([newCategory, ...categories]);
+  };
 
   return (
     <>
-        {/* titulo */}
-        <h1>GifExpertApp</h1>
-    
-        {/* imput */}
-        <AddCategory 
-        // setCategories={setCategories} 
+      {/* titulo */}
+      <h1>GifExpertApp</h1>
+
+      {/* imput */}
+      <AddCategory
+        // setCategories={setCategories}
         //le pasa la funcion al hijo
-        onNewCategory = { (value)  => onAddCategory(value)}  
-        
-        />
+        onNewCategory={(value) => onAddCategory(value)}
+      />
 
+      {/* listado de gifs */}
 
-        {/* listado de gifs */}
+      {categories.map((category) => (
+        <GifGrid key={category} category={category} />
+      ))}
 
-          {
-            categories.map((category) => (
-                <GifGrid 
-                key={category} 
-                category={category}
-                />
-            ))
-          }
-        
-
-        {/* git item */}
+      {/* git item */}
     </>
-    
-  )
-}
+  );
+};
