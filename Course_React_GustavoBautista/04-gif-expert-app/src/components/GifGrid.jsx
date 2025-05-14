@@ -1,5 +1,9 @@
+import { getGifs } from "../helpers/getGifs";
 
 export const GifGrid = ({category}) => {
+
+    getGifs(category);
+
   return (
     //creamo sun fragmento
     <>
@@ -8,3 +12,7 @@ export const GifGrid = ({category}) => {
     </>
   )
 }
+
+
+
+
