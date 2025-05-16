@@ -21,8 +21,15 @@ export const SimpleForm = () => {
   //como cualquier hook es una funcion, esto recibe una funcion como argumento
   useEffect(() => {
     console.log('useEffect called');
-  });
+  }, []);//este es un arreglo de dependencias vacio, un arreglo vacio hace que se ejecute una sola vez
 
+  useEffect(() => {
+    console.log('formState changed');
+  }, [formState]);
+
+  useEffect(() => {
+    console.log('email changed');
+  }, [email]);
 
 
   return (
