@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Message } from "./Message";
 
 export const SimpleForm = () => {
   const [formState, setFormState] = useState({
@@ -20,17 +21,24 @@ export const SimpleForm = () => {
   //useEffect---> sirve para disparar efectos secundarios
   //como cualquier hook es una funcion, esto recibe una funcion como argumento
   useEffect(() => {
-    console.log('useEffect called');
-  }, []);//este es un arreglo de dependencias vacio, un arreglo vacio hace que se ejecute una sola vez
+    // console.log("useEffect called");
+  }, []); //este es un arreglo de dependencias vacio, un arreglo vacio hace que se ejecute una sola vez
 
   useEffect(() => {
-    console.log('formState changed');
+    // console.log("formState changed");
   }, [formState]);
 
   useEffect(() => {
-    console.log('email changed');
+    // console.log("email changed");
   }, [email]);
 
+  // useEffect(() => {
+  //   first
+
+  //   return () => {
+  //     second
+  //   }
+  // }, [third])
 
   return (
     <>
@@ -54,6 +62,10 @@ export const SimpleForm = () => {
         value={email}
         onInput={onInputChange}
       />
+      {
+        (username === 'gustavo2') && <Message />
+      }
+      
     </>
   );
 };
