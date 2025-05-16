@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useFetch = () => {
+export const useFetch = (url) => {
   const [state, setState] = useState({
     data: null,
     isLoading: true,
@@ -10,13 +10,49 @@ export const useFetch = () => {
 
   useEffect(() => {
     getFetch();
-  }, []);
+  }, [url]);
 
+  const setLoadingState = () => {
+    setState({
+        data: null,
+        isLoading: true,
+        hasError: false,
+        error: null,
+    });
+  }
+
+  //esta es nuestra funcion
   const getFetch = async () => {
-    const resp = await fetch("https://pokeapi.co/api/v2/pokemon/1");
-    const data = await resp.json();
+    setLoadingState();
+    const resp = await fetch(url);
 
-    console.log({ data });
+    //sleep
+    await new Promise (resolve => setTimeout(resolve,1500))
+
+    if (!resp.ok) {
+      setState({
+        data: null,
+        isLoading: false,
+        hasError: true,
+        error: {
+          code: resp.status,
+          message: resp.statusText,
+        },
+      });
+      return;
+    }
+
+    const data = await resp.json();
+    setState({
+      data: data,
+      isLoading: false,
+      hasError: false,
+      error: null,
+    });
+
+    //manejo del cache
+
+
   };
 
   //si ahora retorna un objeto es un custom hook

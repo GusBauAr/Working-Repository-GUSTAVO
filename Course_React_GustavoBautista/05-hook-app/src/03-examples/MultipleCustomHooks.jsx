@@ -3,11 +3,16 @@ import { useFetch } from '../hooks/useFetch'
 
 export const MultipleCustomHooks = () => {
 
-
-    useFetch();
+    const {data, hasError, isLoading} = useFetch('https://pokeapi.co/api/v2/pokemon/6');
 
 
   return (
-    <div>MultipleCustomHooks</div>
+    <>
+        <h1> informacion de pokemon</h1>
+        <hr/>
+        {isLoading && <p>cargando....</p>}
+
+        <h2>{data?.name}</h2>
+    </>
   )
 }
