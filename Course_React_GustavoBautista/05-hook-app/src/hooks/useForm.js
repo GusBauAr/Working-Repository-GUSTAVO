@@ -16,11 +16,17 @@ export const useForm = (initialForm = {}) => {
         });
       };
 
+      const onResetForm = () => {
+
+        setFormState(initialForm)
+      }
+
     //retornamos un objeto
     return {
         ...formState,
         formState,
         onInputChange,
+        onResetForm,
 
     }
 }
