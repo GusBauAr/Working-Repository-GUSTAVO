@@ -10,33 +10,46 @@ const initialState = [
 
   {
     id: new Date().getTime() * 3,
-    description: "recolectar la piedra del alam",
+    description: "recolectar la piedra del infinito",
     done: false,
   },
 ];
 
 export const TodoApp = () => {
-  const [state, dispatch] = useReducer(todoReducer, initialState);
+  const [todos, dispatch] = useReducer(todoReducer, initialState);
+
+  const handleNewTodo = (todo) => {
+    console.log({ todo });
+  };
 
   return (
     <>
       <h1>
         TodoApp 10, <small>pendientes: 2</small>
       </h1>
-      <hr/>
+      <hr />
 
       <div className="row">
         <div className="col-7">
+          {/* todoList */}
           <ul className="list-group">
-            <li className="list-group-item d-flex justify-content-between">
-              <span className="align-self-center">Item 1</span>
-              <button className="btn btn-danger">Borrar</button>
-            </li>
+            {todos.map((todo) => (
+              <li
+                key={todo.id}
+                className="list-group-item d-flex justify-content-between"
+              >
+                <span className="align-self-center">Item 1</span>
+                <button className="btn btn-danger">Borrar</button>
+              </li>
+            ))}
           </ul>
+          {/* fin todoliST */}
         </div>
         <div className="col-5">
           <h4>Agregar Todo</h4>
           <hr />
+          {/* todo add onNewTodo*/}
+          {/* {id: newdate()..., description:'', done: false} */}
           <form>
             <input
               type="text"
@@ -47,6 +60,7 @@ export const TodoApp = () => {
               Agregar
             </button>
           </form>
+          {/* fin de todoadd */}
         </div>
       </div>
     </>
