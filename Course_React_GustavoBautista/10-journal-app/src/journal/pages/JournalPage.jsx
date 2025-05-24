@@ -1,12 +1,17 @@
 
 import { Typography } from "@mui/material"
+import { JournalLayout } from "../layout/JournalLayout"
 
 
 export const JournalPage = () => {
   return (
-    <>
-    <Typography variant="h1">JournalPage</Typography>
-    
-    </>
+    <JournalLayout>
+      <Typography>
+        GitHub's “Hello World” tutorial teaches you essentials, where you create your own repository and learn GitHub's pull request workflow for creating and reviewing code.
+      </Typography>
+
+      {/* NothinSelected */}
+      {/* NoteView */}
+    </JournalLayout>
   )
 }
