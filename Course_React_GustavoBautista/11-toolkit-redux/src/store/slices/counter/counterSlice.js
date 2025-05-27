@@ -8,7 +8,8 @@ export const counterSlice = createSlice({
   name: 'counter',
     //el initial state es igual a un objeto
   initialState:{
-    counter: 10
+    counter: 10,
+    times:0,
 
   },
   reducers: {
