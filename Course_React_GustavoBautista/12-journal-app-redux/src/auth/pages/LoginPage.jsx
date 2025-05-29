@@ -23,7 +23,8 @@ export const LoginPage = () => {
   const onsubmit = ( event ) =>{
     event.preventDefault();
 
-    console.log({email, password})
+    // console.log({email, password})
+    //!esta no es la acciona despachar
     dispatch(checkingAuthentication());
   }
 

@@ -49,3 +49,9 @@ export const registerUserWithEmailPassword = async({email, password, displayName
         return {ok: false, errorMessage: error.message}
     }
 }
+
+
+
+export const loginWithEmailPassword = () =>{
+    //!la funcion que vamos a llamar de firebase es signInWithEmailPassword
+}
