@@ -73,3 +73,7 @@ export const loginWithEmailPassword = async({email, password}) =>{
     //!la funcion que vamos a llamar de firebase es signInWithEmailPassword
 
 }
+
+export const logoutFirebase = async() =>{
+    return await FirebaseAuth.signOut();
+}
