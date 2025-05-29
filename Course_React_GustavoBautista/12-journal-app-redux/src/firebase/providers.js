@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
 import { FirebaseAuth } from "./config";
 
 
@@ -34,7 +34,7 @@ export const singInWithGoogle = async()=>{
 
 export const registerUserWithEmailPassword = async({email, password, displayName}) => {
     try {
-        const resp = await createUserWithEmailAndPassword(FirebaseAuth, email, password);
+        const resp = await createUserWithEmailAndPassword (FirebaseAuth, email, password);
         const {uid, photoURL} = resp.user;
         //todo: actualizar el displayName en firebase
         // /tarea asincrona
@@ -45,13 +45,31 @@ export const registerUserWithEmailPassword = async({email, password, displayName
         }
         
     } catch (error) {
-        // console.log(error)
+        console.log(error)
         return {ok: false, errorMessage: error.message}
     }
 }
 
 
 
-export const loginWithEmailPassword = () =>{
+export const loginWithEmailPassword = async({email, password}) =>{
+    console.log(email, password)
+    try {
+        const resp = await signInWithEmailAndPassword(FirebaseAuth, email, password);
+        const {uid, photoURL, displayName} = resp.user;
+
+        return{
+            ok: true,
+            uid, 
+            photoURL, 
+            displayName, 
+            email,
+        };
+
+    } catch (error) {
+        return {ok: false, errorMessage: error.message};
+    }
+
     //!la funcion que vamos a llamar de firebase es signInWithEmailPassword
+
 }
