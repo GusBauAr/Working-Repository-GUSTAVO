@@ -1,13 +1,17 @@
 import { Google } from "@mui/icons-material";
-import { Button, Grid, Link, TextField, Typography } from "@mui/material";
+import Alert from '@mui/material/Alert';
+import { AlertTitle, Button, Grid, Link, TextField, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { AuthLayout } from "../layout/AuthLayout";
 import { useForm } from "../../hooks";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useMemo, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { startCreatingUserWithEmailPassword } from "../../store/auth/thunks";
 
 export const RegisterPage = () => {
+
+  const {status, errorMessage} = useSelector (state => state.auth);
+  const isCheckingAuthentication = useMemo(() => status === 'checking', [status]);
 
   const [formSubmitted, setFormSubmitted] = useState(false)
 
@@ -90,11 +94,17 @@ export const RegisterPage = () => {
               helperText={passwordValid}
             />
             <Grid container spacing={2} sx={{ mb: 2, mt: 1 }}>
+              
+              <Grid item size={{ xs: 12}} display={ !!errorMessage ? '': 'none'}>
+                <Alert severity="error">{errorMessage}</Alert>
+              </Grid>
+
               <Grid item size={{ xs: 12}}>
-                <Button type="submit" variant="contained" fullWidth>
+                <Button disabled={isCheckingAuthentication} type="submit" variant="contained" fullWidth>
                   Crear Cuenta
                 </Button>
               </Grid>
+              
 
               
             </Grid>
