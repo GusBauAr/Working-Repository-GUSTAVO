@@ -44,7 +44,6 @@ export const useForm = ( initialForm = {}, formValidations ={} ) => {
         }
 
         setFormValidation(formCkeckedValues);
-        console.log(formCkeckedValues)
     }   
 
     return {

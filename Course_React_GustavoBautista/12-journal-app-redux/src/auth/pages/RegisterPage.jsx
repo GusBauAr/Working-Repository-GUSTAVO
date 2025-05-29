@@ -4,6 +4,8 @@ import { Link as RouterLink } from "react-router-dom";
 import { AuthLayout } from "../layout/AuthLayout";
 import { useForm } from "../../hooks";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { startCreatingUserWithEmailPassword } from "../../store/auth/thunks";
 
 export const RegisterPage = () => {
 
@@ -21,6 +23,8 @@ export const RegisterPage = () => {
     displayName:[(value) => value.length >=1, 'el nombre es obligatorio'],
   }
 
+  const dispatch = useDispatch();
+
   const {formState, displayName, email, password, onInputChange,
         isFormValid, displayNameValid, emailValid, passwordValid,
   } = useForm(formData, formValidations);
@@ -29,7 +33,10 @@ export const RegisterPage = () => {
   const onsubmit = (event) =>{
     event.preventDefault();
     setFormSubmitted(true)
-    console.log(formState)
+
+    if(!isFormValid) return;
+
+    dispatch(startCreatingUserWithEmailPassword(formState));
   }
 
 
