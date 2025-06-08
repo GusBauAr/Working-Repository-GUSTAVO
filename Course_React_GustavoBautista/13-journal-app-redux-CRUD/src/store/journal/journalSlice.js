@@ -14,7 +14,6 @@ export const journalSlice = createSlice({
         //     date:1234567,
         //     imageUrl: [], //https://foto1.jpg
 
-
         // }
     },
     reducers: {
