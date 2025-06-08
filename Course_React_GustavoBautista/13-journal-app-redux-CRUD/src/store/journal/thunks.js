@@ -9,6 +9,7 @@ export const startNewNote = () =>{
             body: '',
             date: new Date().getTime(),
         }
+        
         //dispatch
         // dispatch(newNote)
         //dispatch parq activar la nota
