@@ -1,3 +1,4 @@
+import { Satellite } from '@mui/icons-material';
 import { createSlice } from '@reduxjs/toolkit';
 
 export const journalSlice = createSlice({
@@ -56,6 +57,13 @@ export const journalSlice = createSlice({
             state.isSaving = false;
         },
 
+        clearNotesLogout: (state) =>{
+            state.isSaving = false;
+            state.messageSaved = '';
+            state.notes = [];
+            state.active = null;
+        },
+
 
         deleteNodeById: (state, action) => {
 
@@ -71,4 +79,5 @@ updateNote,
 deleteNodeById, 
 savingNewNote,
 setPhotosToActiveNote,
+clearNotesLogout,
 } = journalSlice.actions;
