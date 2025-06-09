@@ -6,6 +6,7 @@ import { localizer} from '../../helpers/calendarLocalizer';
 import { getMessagesES } from '../../helpers/getMessages';
 import { CalendarEvent } from '../components/CalendarEvent';
 import { useState } from 'react';
+import { CalendarModal } from '../components/CalendarModal';
 
 
 
@@ -74,6 +75,7 @@ export const CalendarPage = () =>{
       onSelectEvent={onSelect}
       onView={onViewChange}
       />
+      <CalendarModal/>
     </>
   )
 }
