@@ -4,11 +4,12 @@ import { addHours } from 'date-fns';
 import { NavBar } from "../components/NavBar"
 import { localizer} from '../../helpers/calendarLocalizer';
 import { getMessagesES } from '../../helpers/getMessages';
+import { CalendarEvent } from '../components/CalendarEvent';
 
 
 
 const events = [{
-  title:'cimple de gustavo',
+  title:'cumple del jefe',
   notes: 'hay que comprar torta',
   start: new Date(),
   end: addHours(new Date(), 2),
@@ -22,7 +23,6 @@ const events = [{
 
 export const CalendarPage = () =>{
   const eventStyleGetter = (event, start, end, isSelected) =>{
-    console.log({event, start, end, isSelected})
 
 
     const style = {
@@ -49,6 +49,9 @@ export const CalendarPage = () =>{
       style={{ height: 500 }}
       messages={getMessagesES()}
       eventPropGetter={eventStyleGetter}
+      components={{
+        event: CalendarEvent
+      }}
       />
     </>
   )
