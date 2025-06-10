@@ -50,6 +50,7 @@ export const CalendarPage = () =>{
     localStorage.setItem('lastView', event);
     setLastView(event)
   }
+  
 
   return (
     <>
